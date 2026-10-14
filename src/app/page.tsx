@@ -15,8 +15,8 @@ import {
 } from "@/data/products";
 
 export default function HomePage() {
-  const featuredProducts = getFeaturedProducts().slice(0, 4);
-  const newArrivals = getNewArrivals().slice(0, 4);
+  const featuredProducts = getFeaturedProducts().slice(0, 6);
+  const newArrivals = getNewArrivals().slice(0, 6);
   const trendingSmartphones = getProductsByCategory("smartphones").slice(0, 4);
   const wearables = getProductsByCategory("smart-watches").slice(0, 4);
   const audioGear = [
@@ -25,7 +25,7 @@ export default function HomePage() {
     ...getProductsByCategory("chargers-cables"),
   ].slice(0, 4);
   const homeAppliances = getProductsByCategory("home-appliances").slice(0, 4);
-  const specialOffers = getSpecialOffers().slice(0, 4);
+  const specialOffers = getSpecialOffers().slice(0, 6);
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -38,7 +38,7 @@ export default function HomePage() {
       {/* 5. Canva-based Bento Product Grid */}
       <BentoGrid />
 
-      {/* 6. Featured Products */}
+      {/* 6. Primary Section 1: Featured Products (Mobile + Desktop Horizontal Carousel) */}
       <ProductSection
         title="Featured Tech Collection"
         subtitle="Handpicked high-performance devices, flagship models, and authentic accessories."
@@ -48,7 +48,7 @@ export default function HomePage() {
         theme="dark"
       />
 
-      {/* 7. New Arrivals */}
+      {/* 7. Primary Section 2: New Arrivals 2026 (Mobile + Desktop Horizontal Carousel) */}
       <ProductSection
         title="New Arrivals 2026"
         subtitle="The latest gadgets and newly listed models ready for doorstep dispatch."
@@ -58,7 +58,7 @@ export default function HomePage() {
         theme="dark"
       />
 
-      {/* 8. Trending Smartphones */}
+      {/* Secondary Category Section: Trending Smartphones (Extended on Tablet/Desktop) */}
       <ProductSection
         title="Trending Smartphones"
         subtitle="Explore genuine Apple, Redmi, Infinix and flagship smartphones with verified seller warranty."
@@ -66,12 +66,13 @@ export default function HomePage() {
         viewAllLink="/category/smartphones"
         products={trendingSmartphones}
         theme="dark"
+        className="hidden md:block"
       />
 
       {/* 9. Shop by Brand */}
       <BrandGrid />
 
-      {/* 10. Smart Watches and Wearables */}
+      {/* Secondary Category Section: Smart Watches & Wearables (Extended on Tablet/Desktop) */}
       <ProductSection
         title="Smart Watches & Wearables"
         subtitle="Next-gen AMOLED health trackers, luxury smart bands, and stainless steel watches."
@@ -79,9 +80,10 @@ export default function HomePage() {
         viewAllLink="/category/smart-watches"
         products={wearables}
         theme="dark"
+        className="hidden md:block"
       />
 
-      {/* 11. Audio and Accessories */}
+      {/* Secondary Category Section: Audio and Accessories (Extended on Tablet/Desktop) */}
       <ProductSection
         title="Audio & Fast Charging Gear"
         subtitle="Spatial noise-cancelling headphones, high-bass speakers, and GaN fast chargers."
@@ -89,9 +91,10 @@ export default function HomePage() {
         viewAllLink="/category/audio"
         products={audioGear}
         theme="dark"
+        className="hidden md:block"
       />
 
-      {/* 12. Home Appliances */}
+      {/* Secondary Category Section: Home Appliances (Extended on Tablet/Desktop) */}
       <ProductSection
         title="Modern Home Appliances"
         subtitle="Genuine Midea digital rice cookers, oil-free air fryers, electric kettles, and blenders."
@@ -99,9 +102,10 @@ export default function HomePage() {
         viewAllLink="/category/home-appliances"
         products={homeAppliances}
         theme="dark"
+        className="hidden md:block"
       />
 
-      {/* 13. Special Offers */}
+      {/* 8. Primary Section 3: Special Offers & Value Bundles (Mobile + Desktop Horizontal Carousel) */}
       <ProductSection
         title="Exclusive Offers & Value Bundles"
         subtitle="Limited-time price reductions on verified stock with island-wide shipping."

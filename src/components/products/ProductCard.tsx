@@ -27,9 +27,10 @@ interface ProductCardProps {
   product: Product;
   theme?: "dark" | "light";
   index?: number;
+  className?: string;
 }
 
-export function ProductCard({ product, theme = "dark", index = 0 }: ProductCardProps) {
+export function ProductCard({ product, theme = "dark", index = 0, className = "" }: ProductCardProps) {
   const { addToCart } = useCart();
   const { isInWishlist, toggleWishlist } = useWishlist();
   const [justAdded, setJustAdded] = useState(false);
@@ -74,9 +75,9 @@ export function ProductCard({ product, theme = "dark", index = 0 }: ProductCardP
   const TagIcon = tag.icon;
 
   return (
-    <ScrollReveal animation="fade-up" delay={Math.min(index * 60, 300)} duration={600}>
+    <ScrollReveal animation="fade-up" delay={Math.min(index * 60, 300)} duration={600} className={`h-full ${className}`}>
       <div
-        className={`group relative rounded-3xl p-4 sm:p-5 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1.5 ${
+        className={`group relative rounded-3xl p-4 sm:p-5 flex flex-col justify-between h-full transition-all duration-300 hover:-translate-y-1.5 ${
           isDark
             ? "bg-tondel-navyCard/60 hover:bg-tondel-navyCard border border-white/5 hover:border-cyan-400/40 hover:shadow-2xl hover:shadow-cyan-950/40"
             : "bg-white hover:bg-slate-50 border border-slate-200/80 hover:border-blue-400 hover:shadow-xl hover:shadow-slate-200"
