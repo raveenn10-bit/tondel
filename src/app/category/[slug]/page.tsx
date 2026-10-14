@@ -97,8 +97,8 @@ export default function CategoryPage({ params }: CategoryPageProps) {
           </div>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {categoryProducts.map((product) => (
-              <ProductCard key={product.id} product={product} theme="dark" />
+            {categoryProducts.map((product, idx) => (
+              <ProductCard key={product.id} product={product} theme="dark" index={idx} />
             ))}
           </div>
         )}

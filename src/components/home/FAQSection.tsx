@@ -1,8 +1,9 @@
 "use client";
 
 import React, { useState } from "react";
-import { ChevronDown, HelpCircle } from "lucide-react";
+import { ChevronDown, HelpCircle, MessageSquare } from "lucide-react";
 import { siteConfig } from "@/data/site-config";
+import { ScrollReveal } from "@/components/ui/ScrollReveal";
 
 interface FAQItem {
   question: string;
@@ -52,70 +53,79 @@ export function FAQSection() {
   return (
     <section className="py-20 bg-tondel-navySurface border-t border-white/5 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto space-y-10">
-        <div className="text-center space-y-3">
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-600/20 text-blue-400 border border-blue-500/30 text-[10px] font-bold tracking-wider uppercase">
-            <HelpCircle className="w-3.5 h-3.5" />
-            Got Questions?
-          </span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold font-heading text-white">
-            Frequently Asked Questions
-          </h2>
-          <p className="text-xs sm:text-sm text-slate-400">
-            Everything you need to know about ordering, delivery, warranty, and WhatsApp checkout.
-          </p>
-        </div>
+        <ScrollReveal animation="fade-down">
+          <div className="text-center space-y-3">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-600/20 text-blue-400 border border-blue-500/30 text-[10px] font-bold tracking-wider uppercase">
+              <HelpCircle className="w-3.5 h-3.5" />
+              Got Questions?
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-extrabold font-heading text-white">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-xs sm:text-sm text-slate-400">
+              Everything you need to know about ordering, delivery, warranty, and WhatsApp checkout.
+            </p>
+          </div>
+        </ScrollReveal>
 
         <div className="space-y-3">
           {faqs.map((faq, idx) => {
             const isOpen = openIndex === idx;
             return (
-              <div
+              <ScrollReveal
                 key={idx}
-                className="rounded-2xl bg-white/[0.02] border border-white/5 overflow-hidden transition-colors"
+                animation="fade-up"
+                delay={idx * 60}
               >
-                <button
-                  onClick={() => toggle(idx)}
-                  className="w-full p-5 text-left flex items-center justify-between gap-4 hover:bg-white/[0.02] transition-colors"
-                  aria-expanded={isOpen}
+                <div
+                  className="rounded-2xl bg-white/[0.02] border border-white/5 overflow-hidden transition-colors"
                 >
-                  <span className="font-heading font-semibold text-sm sm:text-base text-white">
-                    {faq.question}
-                  </span>
-                  <ChevronDown
-                    className={`w-5 h-5 text-blue-400 shrink-0 transition-transform duration-300 ${
-                      isOpen ? "rotate-180" : ""
-                    }`}
-                  />
-                </button>
-                {isOpen && (
-                  <div className="px-5 pb-5 pt-1 text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-white/5">
-                    {faq.answer}
-                  </div>
-                )}
-              </div>
+                  <button
+                    onClick={() => toggle(idx)}
+                    className="w-full p-5 text-left flex items-center justify-between gap-4 hover:bg-white/[0.02] transition-colors"
+                    aria-expanded={isOpen}
+                  >
+                    <span className="font-heading font-semibold text-sm sm:text-base text-white">
+                      {faq.question}
+                    </span>
+                    <ChevronDown
+                      className={`w-5 h-5 text-blue-400 shrink-0 transition-transform duration-300 ${
+                        isOpen ? "rotate-180" : ""
+                      }`}
+                    />
+                  </button>
+                  {isOpen && (
+                    <div className="px-5 pb-5 pt-1 text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-white/5">
+                      {faq.answer}
+                    </div>
+                  )}
+                </div>
+              </ScrollReveal>
             );
           })}
         </div>
 
         {/* Still have questions banner */}
-        <div className="p-6 rounded-2xl bg-blue-950/40 border border-blue-500/30 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
-          <div>
-            <h4 className="font-heading font-bold text-white text-sm">
-              Still have a specific question about a product?
-            </h4>
-            <p className="text-xs text-slate-400 mt-0.5">
-              Our support team is available daily on WhatsApp for quick inquiries.
-            </p>
+        <ScrollReveal animation="fade-up" delay={200}>
+          <div className="p-6 rounded-2xl bg-blue-950/40 border border-blue-500/30 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+            <div>
+              <h4 className="font-heading font-bold text-white text-sm">
+                Still have a specific question about a product?
+              </h4>
+              <p className="text-xs text-slate-400 mt-0.5">
+                Our support team is available daily on WhatsApp for quick inquiries.
+              </p>
+            </div>
+            <a
+              href={`https://wa.me/${siteConfig.whatsappNumber}?text=${encodeURIComponent("Hello TONDEL! I have a question before placing an order.")}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-5 py-2.5 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-semibold whitespace-nowrap transition-colors shadow-lg hover:shadow-emerald-500/20"
+            >
+              Chat with Us
+            </a>
           </div>
-          <a
-            href={`https://wa.me/${siteConfig.whatsappNumber}?text=${encodeURIComponent("Hello TONDEL! I have a question before placing an order.")}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-5 py-2.5 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-semibold whitespace-nowrap transition-colors"
-          >
-            Chat with Us
-          </a>
-        </div>
+        </ScrollReveal>
       </div>
     </section>
   );

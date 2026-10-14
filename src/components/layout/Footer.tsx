@@ -5,13 +5,15 @@ import Link from "next/link";
 import Image from "next/image";
 import { siteConfig } from "@/data/site-config";
 import { MessageCircle, Shield, Truck, Clock, MapPin, Mail, ArrowUpRight } from "lucide-react";
+import { ScrollReveal } from "@/components/ui/ScrollReveal";
 
 export function Footer() {
   return (
     <footer className="bg-tondel-navySurface border-t border-white/10 text-slate-400 text-sm">
       {/* Upper Features / Guarantees Strip */}
       <div className="border-b border-white/5 py-10 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-6">
+        <ScrollReveal animation="fade-up">
+          <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-6">
           <div className="flex items-center gap-4 p-4 rounded-2xl bg-white/[0.02] border border-white/5">
             <div className="p-3 rounded-xl bg-blue-600/20 text-blue-400">
               <Truck className="w-6 h-6" />
@@ -52,7 +54,8 @@ export function Footer() {
             </div>
           </div>
         </div>
-      </div>
+      </ScrollReveal>
+    </div>
 
       {/* Main Footer Links */}
       <div className="max-w-7xl mx-auto py-14 px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
@@ -204,7 +207,7 @@ export function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-white/5 py-6 px-4 text-center text-xs text-slate-500">
+      <div className="border-t border-white/5 pt-6 pb-24 sm:pb-6 px-4 text-center text-xs text-slate-500">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
           <p>© {new Date().getFullYear()} TONDEL. All rights reserved. Smart Choices, Smarter Living.</p>
           <p className="text-slate-400">

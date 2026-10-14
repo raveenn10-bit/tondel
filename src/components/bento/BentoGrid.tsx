@@ -6,6 +6,7 @@ import Image from "next/image";
 import { ArrowRight, Sparkles, ShoppingBag, Eye, Heart } from "lucide-react";
 import { useWishlist } from "@/context/WishlistContext";
 import { useCart } from "@/context/CartContext";
+import { ScrollReveal } from "@/components/ui/ScrollReveal";
 
 export function BentoGrid() {
   const { toggleWishlist, isInWishlist } = useWishlist();
@@ -16,30 +17,32 @@ export function BentoGrid() {
       <div className="max-w-7xl mx-auto space-y-8">
         
         {/* Section Header */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
-          <div>
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-xs font-bold uppercase tracking-wider mb-2">
-              <Sparkles className="w-3.5 h-3.5" />
-              Curated Collections
+        <ScrollReveal animation="fade-down">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+            <div>
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-xs font-bold uppercase tracking-wider mb-2">
+                <Sparkles className="w-3.5 h-3.5" />
+                Curated Collections
+              </div>
+              <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight font-heading text-slate-900">
+                Explore By Category
+              </h2>
             </div>
-            <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight font-heading text-slate-900">
-              Explore By Category
-            </h2>
+            <Link
+              href="/shop"
+              className="text-sm font-semibold text-blue-600 hover:text-blue-800 flex items-center gap-1 group transition-colors"
+            >
+              <span>View All Collections</span>
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </Link>
           </div>
-          <Link
-            href="/shop"
-            className="text-sm font-semibold text-blue-600 hover:text-blue-800 flex items-center gap-1 group transition-colors"
-          >
-            <span>View All Collections</span>
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </Link>
-        </div>
+        </ScrollReveal>
 
         {/* Top Bento Row: 4-Quadrant Category Bento + Dark Spacial Experience Card */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
           
           {/* Left: 4-Quadrant Category Bento (Faithful to bento-reference.png) */}
-          <div className="lg:col-span-8 bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-slate-200/80">
+          <ScrollReveal animation="fade-right" className="lg:col-span-8 bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-slate-200/80">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
               
               {/* Quadrant 1: Technology */}
@@ -151,10 +154,10 @@ export function BentoGrid() {
               </Link>
 
             </div>
-          </div>
+          </ScrollReveal>
 
           {/* Right: Dark "The new Spacial Experience" Card (Faithful to bento-reference.png) */}
-          <div className="lg:col-span-4 bg-slate-950 text-white rounded-3xl p-8 sm:p-10 flex flex-col justify-between relative overflow-hidden shadow-xl border border-white/10 group">
+          <ScrollReveal animation="fade-left" delay={150} className="lg:col-span-4 bg-slate-950 text-white rounded-3xl p-8 sm:p-10 flex flex-col justify-between relative overflow-hidden shadow-xl border border-white/10 group">
             <div className="absolute top-0 right-0 w-64 h-64 bg-blue-600/20 rounded-full blur-3xl pointer-events-none group-hover:bg-blue-600/30 transition-all duration-700" />
             <div className="absolute bottom-0 left-0 w-48 h-48 bg-purple-600/15 rounded-full blur-2xl pointer-events-none" />
 
@@ -178,14 +181,14 @@ export function BentoGrid() {
                 Browse products
               </Link>
             </div>
-          </div>
+          </ScrollReveal>
         </div>
 
         {/* Lower Bento Row: Bestsellers Section + Featured Product Card */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
           
           {/* Left: Bestsellers Showcase (Faithful to bento-reference.png) */}
-          <div className="lg:col-span-8 bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-slate-200/80">
+          <ScrollReveal animation="fade-up" className="lg:col-span-8 bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-slate-200/80">
             <div className="flex items-center justify-between mb-6">
               <h3 className="text-2xl font-bold font-heading text-slate-900">
                 Bestsellers
@@ -334,10 +337,10 @@ export function BentoGrid() {
               </div>
 
             </div>
-          </div>
+          </ScrollReveal>
 
           {/* Right: Featured Products Spotlight (Faithful to bento-reference.png) */}
-          <div className="lg:col-span-4 bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-slate-200/80 flex flex-col justify-between">
+          <ScrollReveal animation="fade-left" delay={150} className="lg:col-span-4 bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-slate-200/80 flex flex-col justify-between">
             <div>
               <div className="flex items-center justify-between mb-4">
                 <h3 className="text-xl font-bold font-heading text-slate-900">
@@ -383,7 +386,7 @@ export function BentoGrid() {
                 <ArrowRight className="w-3 h-3" />
               </Link>
             </div>
-          </div>
+          </ScrollReveal>
 
         </div>
 

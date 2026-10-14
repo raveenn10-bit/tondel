@@ -22,6 +22,7 @@ import {
   Share2,
   Sparkles
 } from "lucide-react";
+import { ScrollReveal } from "@/components/ui/ScrollReveal";
 
 interface ProductDetailViewProps {
   product: Product;
@@ -97,7 +98,7 @@ export function ProductDetailView({ product, relatedProducts }: ProductDetailVie
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14">
         
         {/* Left Column: Image Gallery */}
-        <div className="lg:col-span-6 space-y-4">
+        <ScrollReveal animation="fade-right" className="lg:col-span-6 space-y-4">
           {/* Main Hero Image */}
           <div className="relative aspect-square w-full rounded-3xl bg-slate-900 border border-white/10 overflow-hidden group shadow-xl">
             {product.badge && (
@@ -138,10 +139,10 @@ export function ProductDetailView({ product, relatedProducts }: ProductDetailVie
               ))}
             </div>
           )}
-        </div>
+        </ScrollReveal>
 
         {/* Right Column: Information, Variants & Actions */}
-        <div className="lg:col-span-6 flex flex-col justify-between space-y-6">
+        <ScrollReveal animation="fade-left" delay={150} className="lg:col-span-6 flex flex-col justify-between space-y-6">
           
           <div className="space-y-4">
             {/* Top Brand & Actions */}
@@ -326,67 +327,71 @@ export function ProductDetailView({ product, relatedProducts }: ProductDetailVie
 
           </div>
 
-        </div>
+        </ScrollReveal>
 
       </div>
 
       {/* Specifications & Extended Description Tabs */}
-      <div className="border-t border-white/10 pt-12 space-y-10">
-        <div className="space-y-4">
-          <h2 className="text-2xl font-bold font-heading text-white">
-            Technical Specifications
-          </h2>
-          <div className="rounded-2xl border border-white/5 overflow-hidden">
-            <div className="divide-y divide-white/5">
-              {Object.entries(product.specifications).map(([key, value], idx) => (
-                <div
-                  key={idx}
-                  className={`grid grid-cols-1 sm:grid-cols-3 p-4 text-xs sm:text-sm ${
-                    idx % 2 === 0 ? "bg-white/[0.01]" : "bg-white/[0.03]"
-                  }`}
-                >
-                  <span className="font-semibold text-slate-400">{key}</span>
-                  <span className="sm:col-span-2 text-white font-medium mt-1 sm:mt-0">
-                    {value}
-                  </span>
-                </div>
-              ))}
+      <ScrollReveal animation="fade-up">
+        <div className="border-t border-white/10 pt-12 space-y-10">
+          <div className="space-y-4">
+            <h2 className="text-2xl font-bold font-heading text-white">
+              Technical Specifications
+            </h2>
+            <div className="rounded-2xl border border-white/5 overflow-hidden">
+              <div className="divide-y divide-white/5">
+                {Object.entries(product.specifications).map(([key, value], idx) => (
+                  <div
+                    key={idx}
+                    className={`grid grid-cols-1 sm:grid-cols-3 p-4 text-xs sm:text-sm ${
+                      idx % 2 === 0 ? "bg-white/[0.01]" : "bg-white/[0.03]"
+                    }`}
+                  >
+                    <span className="font-semibold text-slate-400">{key}</span>
+                    <span className="sm:col-span-2 text-white font-medium mt-1 sm:mt-0">
+                      {value}
+                    </span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
-        </div>
 
-        {/* Full Overview Description */}
-        <div className="space-y-3">
-          <h2 className="text-2xl font-bold font-heading text-white">
-            Product Overview
-          </h2>
-          <p className="text-xs sm:text-sm text-slate-300 leading-relaxed max-w-3xl">
-            {product.description}
-          </p>
+          {/* Full Overview Description */}
+          <div className="space-y-3">
+            <h2 className="text-2xl font-bold font-heading text-white">
+              Product Overview
+            </h2>
+            <p className="text-xs sm:text-sm text-slate-300 leading-relaxed max-w-3xl">
+              {product.description}
+            </p>
+          </div>
         </div>
-      </div>
+      </ScrollReveal>
 
       {/* Related Products */}
       {relatedProducts.length > 0 && (
-        <div className="border-t border-white/10 pt-16 space-y-6">
-          <div className="flex items-center justify-between">
-            <h2 className="text-2xl font-bold font-heading text-white">
-              Related Products You May Like
-            </h2>
-            <Link
-              href="/shop"
-              className="text-xs text-blue-400 hover:text-blue-300 font-semibold"
-            >
-              View More
-            </Link>
-          </div>
+        <ScrollReveal animation="fade-up">
+          <div className="border-t border-white/10 pt-16 space-y-6">
+            <div className="flex items-center justify-between">
+              <h2 className="text-2xl font-bold font-heading text-white">
+                Related Products You May Like
+              </h2>
+              <Link
+                href="/shop"
+                className="text-xs text-blue-400 hover:text-blue-300 font-semibold"
+              >
+                View More
+              </Link>
+            </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {relatedProducts.map((p) => (
-              <ProductCard key={p.id} product={p} theme="dark" />
-            ))}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {relatedProducts.map((p, idx) => (
+                <ProductCard key={p.id} product={p} theme="dark" index={idx} />
+              ))}
+            </div>
           </div>
-        </div>
+        </ScrollReveal>
       )}
 
       {copiedLink && (

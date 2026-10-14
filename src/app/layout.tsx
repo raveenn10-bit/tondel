@@ -8,6 +8,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { CartDrawer } from "@/components/cart/CartDrawer";
 import { FloatingWhatsApp } from "@/components/ui/FloatingWhatsApp";
+import { MobileBottomNav } from "@/components/layout/MobileBottomNav";
 import { siteConfig } from "@/data/site-config";
 
 const manrope = Manrope({
@@ -78,6 +79,7 @@ export default function RootLayout({
             <Footer />
             <CartDrawer />
             <FloatingWhatsApp />
+            <MobileBottomNav />
           </WishlistProvider>
         </CartProvider>
       </body>

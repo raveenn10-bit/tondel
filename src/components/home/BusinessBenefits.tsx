@@ -10,6 +10,7 @@ import {
   Sparkles, 
   CheckCircle2 
 } from "lucide-react";
+import { ScrollReveal } from "@/components/ui/ScrollReveal";
 
 export function BusinessBenefits() {
   const benefits = [
@@ -45,43 +46,50 @@ export function BusinessBenefits() {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-blue-600/10 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto space-y-12 relative z-10">
-        <div className="text-center max-w-2xl mx-auto space-y-3">
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-600/20 border border-blue-500/30 text-blue-400 text-[10px] font-bold tracking-wider uppercase">
-            <Sparkles className="w-3.5 h-3.5" />
-            Why Choose TONDEL
-          </span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold font-heading text-white">
-            Smart Choices, Smarter Living
-          </h2>
-          <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">
-            We bridge authentic technology and everyday lifestyle with seamless human-first service and transparent pricing.
-          </p>
-        </div>
+        <ScrollReveal animation="fade-down">
+          <div className="text-center max-w-2xl mx-auto space-y-3">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-600/20 border border-blue-500/30 text-blue-400 text-[10px] font-bold tracking-wider uppercase">
+              <Sparkles className="w-3.5 h-3.5" />
+              Why Choose TONDEL
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-extrabold font-heading text-white">
+              Smart Choices, Smarter Living
+            </h2>
+            <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">
+              We bridge authentic technology and everyday lifestyle with seamless human-first service and transparent pricing.
+            </p>
+          </div>
+        </ScrollReveal>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {benefits.map((b, idx) => {
             const Icon = b.icon;
             return (
-              <div
+              <ScrollReveal
                 key={idx}
-                className="p-6 rounded-3xl bg-tondel-navySurface/80 border border-white/5 hover:border-blue-500/30 transition-all duration-300 flex flex-col justify-between space-y-4 hover:-translate-y-1"
+                animation="fade-up"
+                delay={idx * 100}
               >
-                <div className={`w-12 h-12 rounded-2xl flex items-center justify-center border ${b.color}`}>
-                  <Icon className="w-6 h-6" />
+                <div
+                  className="p-6 rounded-3xl bg-tondel-navySurface/80 border border-white/5 hover:border-blue-500/30 transition-all duration-300 flex flex-col justify-between space-y-4 hover:-translate-y-1 h-full shadow-lg hover:shadow-[0_0_20px_rgba(59,130,246,0.15)]"
+                >
+                  <div className={`w-12 h-12 rounded-2xl flex items-center justify-center border ${b.color}`}>
+                    <Icon className="w-6 h-6" />
+                  </div>
+                  <div className="space-y-1.5">
+                    <h3 className="font-heading font-bold text-base text-white">
+                      {b.title}
+                    </h3>
+                    <p className="text-xs text-slate-400 leading-relaxed">
+                      {b.description}
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-1 text-[11px] font-medium text-slate-400 pt-2 border-t border-white/5">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-blue-400" />
+                    <span>Verified Standard</span>
+                  </div>
                 </div>
-                <div className="space-y-1.5">
-                  <h3 className="font-heading font-bold text-base text-white">
-                    {b.title}
-                  </h3>
-                  <p className="text-xs text-slate-400 leading-relaxed">
-                    {b.description}
-                  </p>
-                </div>
-                <div className="flex items-center gap-1 text-[11px] font-medium text-slate-400 pt-2 border-t border-white/5">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-blue-400" />
-                  <span>Verified Standard</span>
-                </div>
-              </div>
+              </ScrollReveal>
             );
           })}
         </div>

@@ -69,8 +69,8 @@ export function ProductSection({
             columns === 3 ? "lg:grid-cols-3" : "lg:grid-cols-4"
           } gap-5 sm:gap-6`}
         >
-          {products.map((product) => (
-            <ProductCard key={product.id} product={product} theme={theme} />
+          {products.map((product, idx) => (
+            <ProductCard key={product.id} product={product} theme={theme} index={idx} />
           ))}
         </div>
       </div>
