@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg-midea-digital-air-fryer" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070C1A"/>
+      <stop offset="50%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#15213F"/>
+    </linearGradient>
+    <radialGradient id="radial-midea-digital-air-fryer" cx="50%" cy="45%" r="60%">
+      <stop offset="0%" stop-color="#EF4444" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#EF4444" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="600" height="600" rx="30" fill="url(#bg-midea-digital-air-fryer)"/>
+  <rect width="600" height="600" rx="30" fill="url(#radial-midea-digital-air-fryer)"/>
+  <rect x="2" y="2" width="596" height="596" rx="28" fill="none" stroke="#FFFFFF" stroke-opacity="0.08" stroke-width="2"/>
+  
+  <!-- Subtle tech background grid -->
+  <g opacity="0.06" stroke="#FFFFFF" stroke-width="1">
+    <line x1="100" y1="0" x2="100" y2="600"/>
+    <line x1="200" y1="0" x2="200" y2="600"/>
+    <line x1="300" y1="0" x2="300" y2="600"/>
+    <line x1="400" y1="0" x2="400" y2="600"/>
+    <line x1="500" y1="0" x2="500" y2="600"/>
+    <line x1="0" y1="100" x2="600" y2="100"/>
+    <line x1="0" y1="200" x2="600" y2="200"/>
+    <line x1="0" y1="300" x2="600" y2="300"/>
+    <line x1="0" y1="400" x2="600" y2="400"/>
+    <line x1="0" y1="500" x2="600" y2="500"/>
+  </g>
+  
+  <!-- Brand & Category Tag -->
+  <rect x="40" y="40" width="130" height="28" rx="14" fill="#EF4444" fill-opacity="0.15" stroke="#EF4444" stroke-width="1.2"/>
+  <text x="105" y="58" text-anchor="middle" fill="#EF4444" font-family="system-ui, sans-serif" font-weight="700" font-size="11" letter-spacing="1">MIDEA</text>
+  
+  <!-- Genuine Verification Stamp -->
+  <g transform="translate(430, 40)">
+    <rect width="130" height="28" rx="14" fill="#10B981" fill-opacity="0.15" stroke="#10B981" stroke-width="1.2"/>
+    <text x="65" y="18" text-anchor="middle" fill="#10B981" font-family="system-ui, sans-serif" font-weight="700" font-size="10.5" letter-spacing="0.5">✓ 100% GENUINE</text>
+  </g>
+
+  <!-- Product Illustration -->
+  <g transform="translate(0, 20)">
+    
+        <!-- Air Fryer Main Dome -->
+        <path d="M190 170 C190 110, 410 110, 410 170 L410 360 C410 380, 190 380, 190 360 Z" fill="#0F172A" stroke="#EF4444" stroke-width="4"/>
+        <!-- Top Touchscreen Panel -->
+        <rect x="230" y="140" width="140" height="70" rx="16" fill="#1E293B" stroke="#EF4444" stroke-width="2"/>
+        <text x="300" y="175" text-anchor="middle" fill="#FFFFFF" font-family="monospace" font-weight="900" font-size="24">200°C</text>
+        <text x="300" y="196" text-anchor="middle" fill="#EF4444" font-family="monospace" font-weight="bold" font-size="14">18 MIN</text>
+        <!-- Fry Basket Window -->
+        <rect x="220" y="235" width="160" height="105" rx="18" fill="#182234" stroke="#EF4444" stroke-width="3"/>
+        <!-- Basket Handle -->
+        <rect x="282" y="260" width="36" height="55" rx="12" fill="#0F172A" stroke="#EF4444" stroke-width="3"/>
+      
+  </g>
+  
+  <!-- Bottom Product Title and Watermark -->
+  <rect x="40" y="505" width="520" height="60" rx="16" fill="#0B132B" fill-opacity="0.8" stroke="#FFFFFF" stroke-opacity="0.1" stroke-width="1"/>
+  <text x="65" y="541" fill="#FFFFFF" font-family="system-ui, -apple-system, sans-serif" font-weight="700" font-size="18">Midea 4.5L Digital Touchscreen Air Fryer</text>
+  <text x="535" y="541" text-anchor="end" fill="#EF4444" font-family="system-ui, sans-serif" font-weight="700" font-size="12" letter-spacing="1">TONDEL.LK</text>
+</svg>

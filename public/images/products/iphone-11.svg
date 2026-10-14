@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg-iphone-11" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070C1A"/>
+      <stop offset="50%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#15213F"/>
+    </linearGradient>
+    <radialGradient id="radial-iphone-11" cx="50%" cy="45%" r="60%">
+      <stop offset="0%" stop-color="#3B82F6" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#3B82F6" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="600" height="600" rx="30" fill="url(#bg-iphone-11)"/>
+  <rect width="600" height="600" rx="30" fill="url(#radial-iphone-11)"/>
+  <rect x="2" y="2" width="596" height="596" rx="28" fill="none" stroke="#FFFFFF" stroke-opacity="0.08" stroke-width="2"/>
+  
+  <!-- Subtle tech background grid -->
+  <g opacity="0.06" stroke="#FFFFFF" stroke-width="1">
+    <line x1="100" y1="0" x2="100" y2="600"/>
+    <line x1="200" y1="0" x2="200" y2="600"/>
+    <line x1="300" y1="0" x2="300" y2="600"/>
+    <line x1="400" y1="0" x2="400" y2="600"/>
+    <line x1="500" y1="0" x2="500" y2="600"/>
+    <line x1="0" y1="100" x2="600" y2="100"/>
+    <line x1="0" y1="200" x2="600" y2="200"/>
+    <line x1="0" y1="300" x2="600" y2="300"/>
+    <line x1="0" y1="400" x2="600" y2="400"/>
+    <line x1="0" y1="500" x2="600" y2="500"/>
+  </g>
+  
+  <!-- Brand & Category Tag -->
+  <rect x="40" y="40" width="130" height="28" rx="14" fill="#3B82F6" fill-opacity="0.15" stroke="#3B82F6" stroke-width="1.2"/>
+  <text x="105" y="58" text-anchor="middle" fill="#3B82F6" font-family="system-ui, sans-serif" font-weight="700" font-size="11" letter-spacing="1">APPLE</text>
+  
+  <!-- Genuine Verification Stamp -->
+  <g transform="translate(430, 40)">
+    <rect width="130" height="28" rx="14" fill="#10B981" fill-opacity="0.15" stroke="#10B981" stroke-width="1.2"/>
+    <text x="65" y="18" text-anchor="middle" fill="#10B981" font-family="system-ui, sans-serif" font-weight="700" font-size="10.5" letter-spacing="0.5">✓ 100% GENUINE</text>
+  </g>
+
+  <!-- Product Illustration -->
+  <g transform="translate(0, 20)">
+    
+        <!-- Phone Outline -->
+        <rect x="210" y="80" width="180" height="340" rx="34" fill="#111827" stroke="#3B82F6" stroke-width="4"/>
+        <rect x="222" y="94" width="156" height="312" rx="24" fill="#1F2937"/>
+        <!-- Notch -->
+        <path d="M265 94 L265 110 A 6 6 0 0 0 271 116 L329 116 A 6 6 0 0 0 335 110 L335 94 Z" fill="#111827"/>
+        <!-- Camera bump rear silhouette -->
+        <rect x="230" y="115" width="46" height="88" rx="16" fill="#3B82F6" fill-opacity="0.2" stroke="#3B82F6" stroke-width="2"/>
+        <circle cx="253" cy="138" r="14" fill="#0F172A" stroke="#3B82F6" stroke-width="3"/>
+        <circle cx="253" cy="178" r="14" fill="#0F172A" stroke="#3B82F6" stroke-width="3"/>
+        <line x1="260" y1="380" x2="340" y2="380" stroke="#FFFFFF" stroke-opacity="0.4" stroke-width="3" stroke-linecap="round"/>
+      
+  </g>
+  
+  <!-- Bottom Product Title and Watermark -->
+  <rect x="40" y="505" width="520" height="60" rx="16" fill="#0B132B" fill-opacity="0.8" stroke="#FFFFFF" stroke-opacity="0.1" stroke-width="1"/>
+  <text x="65" y="541" fill="#FFFFFF" font-family="system-ui, -apple-system, sans-serif" font-weight="700" font-size="18">Apple iPhone 11</text>
+  <text x="535" y="541" text-anchor="end" fill="#3B82F6" font-family="system-ui, sans-serif" font-weight="700" font-size="12" letter-spacing="1">TONDEL.LK</text>
+</svg>

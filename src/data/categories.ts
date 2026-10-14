@@ -1,0 +1,88 @@
+import { Category } from "@/types";
+
+export const categories: Category[] = [
+  {
+    id: "cat-smartphones",
+    slug: "smartphones",
+    name: "Smartphones",
+    description: "Flagship and value smartphones from Apple, Xiaomi, Infinix, and Samsung with verified warranty and island-wide delivery.",
+    image: "/images/categories/smartphones.webp",
+    iconName: "Smartphone",
+    featured: true,
+    productCount: 5,
+  },
+  {
+    id: "cat-smart-watches",
+    slug: "smart-watches",
+    name: "Smart Watches & Wearables",
+    description: "Next-gen fitness trackers, health monitors, and luxury smart watches to keep you connected and active.",
+    image: "/images/categories/smart-watches.webp",
+    iconName: "Watch",
+    featured: true,
+    productCount: 2,
+  },
+  {
+    id: "cat-audio",
+    slug: "audio",
+    name: "Headphones and Earbuds",
+    description: "Active noise cancelling wireless headphones, studio-grade acoustics, and sweatproof everyday earbuds.",
+    image: "/images/categories/audio.webp",
+    iconName: "Headphones",
+    featured: true,
+    productCount: 1,
+  },
+  {
+    id: "cat-speakers",
+    slug: "speakers",
+    name: "Bluetooth Speakers",
+    description: "High-bass portable outdoor party speakers and sleek desktop audio systems with dynamic RGB lighting.",
+    image: "/images/categories/speakers.webp",
+    iconName: "Speaker",
+    featured: true,
+    productCount: 1,
+  },
+  {
+    id: "cat-chargers-cables",
+    slug: "chargers-cables",
+    name: "Chargers and Cables",
+    description: "High-speed GaN fast wall adapters, heavy-duty braided data cables, and universal multi-port power bricks.",
+    image: "/images/categories/chargers-cables.webp",
+    iconName: "Zap",
+    featured: true,
+    productCount: 2,
+  },
+  {
+    id: "cat-computer-accessories",
+    slug: "computer-accessories",
+    name: "Computer Accessories",
+    description: "Ergonomic dual-mode mice, mechanical typing keyboards, and precision desk accessories for productivity.",
+    image: "/images/categories/computer-accessories.webp",
+    iconName: "Mouse",
+    featured: false,
+    productCount: 1,
+  },
+  {
+    id: "cat-home-appliances",
+    slug: "home-appliances",
+    name: "Home Appliances",
+    description: "Authentic Midea smart digital rice cookers, oil-free air fryers, electric kettles, and high-speed blenders.",
+    image: "/images/categories/home-appliances.webp",
+    iconName: "Home",
+    featured: true,
+    productCount: 4,
+  },
+  {
+    id: "cat-offers",
+    slug: "offers",
+    name: "Special Offers",
+    description: "Limited-time discounts, clearance deals, and value bundles on authentic gadgets and appliances.",
+    image: "/images/categories/offers.webp",
+    iconName: "Sparkles",
+    featured: true,
+    productCount: 4,
+  },
+];
+
+export function getCategoryBySlug(slug: string): Category | undefined {
+  return categories.find((cat) => cat.slug === slug);
+}

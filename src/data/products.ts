@@ -1,0 +1,1045 @@
+import { Product } from "@/types";
+
+export const products: Product[] = [
+  // 1. iPhone 11
+  {
+    id: "prod-iphone-11",
+    slug: "iphone-11",
+    name: "Apple iPhone 11",
+    brand: "apple",
+    category: "smartphones",
+    shortDescription: "Reliable dual-camera flagship with Apple A13 Bionic, all-day battery life, and vibrant 6.1-inch Liquid Retina display.",
+    description: "The Apple iPhone 11 offers reliable flagship performance powered by the A13 Bionic chip. Featuring an ultra-wide dual camera system, 4K video recording at 60 fps, Night mode for stunning low-light photography, and IP68 water resistance. Available in multiple clean finishes with guaranteed seller warranty and island-wide fast delivery across Sri Lanka.",
+    specifications: {
+      "Display": "6.1-inch Liquid Retina HD IPS LCD (1792 x 828 pixels, 326 ppi, True Tone)",
+      "Processor": "Apple A13 Bionic (7 nm+) Hexa-core with 3rd Gen Neural Engine",
+      "Main Camera": "Dual 12 MP (Wide f/1.8, OIS + Ultra-Wide 120° f/2.4) with 4K@60fps & Night Mode",
+      "Front Camera": "12 MP TrueDepth Camera (f/2.2) with 4K video and Slo-mo",
+      "Battery": "3,110 mAh with 18W Fast Charging & Qi Wireless Charging support",
+      "Build": "Aerospace-grade aluminum with durable front & back glass",
+      "Water Resistance": "IP68 rated (maximum depth of 2 meters up to 30 minutes)",
+      "Operating System": "iOS (Upgradable to latest iOS)",
+      "Warranty": "6 Months Seller / Store Warranty with Invoice",
+    },
+    images: ["/images/products/iphone-11.webp", "/images/products/iphone-11-2.webp"],
+    price: 118000,
+    compareAtPrice: 135000,
+    currency: "LKR",
+    variants: [
+      {
+        id: "var-ip11-64-blk",
+        name: "64GB - Space Black",
+        price: 118000,
+        compareAtPrice: 135000,
+        sku: "IP11-64-BLK",
+        inStock: true,
+        colorHex: "#1C1C1E",
+      },
+      {
+        id: "var-ip11-64-wht",
+        name: "64GB - Pearl White",
+        price: 118000,
+        compareAtPrice: 135000,
+        sku: "IP11-64-WHT",
+        inStock: true,
+        colorHex: "#F9F6EF",
+      },
+      {
+        id: "var-ip11-128-blk",
+        name: "128GB - Space Black",
+        price: 129000,
+        compareAtPrice: 148000,
+        sku: "IP11-128-BLK",
+        inStock: true,
+        colorHex: "#1C1C1E",
+      },
+      {
+        id: "var-ip11-128-pur",
+        name: "128GB - Pastel Purple",
+        price: 129000,
+        compareAtPrice: 148000,
+        sku: "IP11-128-PUR",
+        inStock: true,
+        colorHex: "#D1CDDA",
+      },
+    ],
+    availability: "In Stock",
+    featured: true,
+    newArrival: false,
+    trending: true,
+    status: "active",
+    badge: "Value Flagship",
+    seo: {
+      title: "Apple iPhone 11 Price in Sri Lanka | TONDEL.LK",
+      description: "Buy original Apple iPhone 11 in Sri Lanka at TONDEL. Genuine quality with warranty, cash on delivery, and instant WhatsApp ordering.",
+      keywords: ["iPhone 11 Sri Lanka", "Apple iPhone 11 LKR price", "TONDEL iPhone", "cheap iPhone Sri Lanka"],
+    },
+  },
+
+  // 2. iPhone 17 Series (Concept / Announced)
+  {
+    id: "prod-iphone-17-pro",
+    slug: "iphone-17-pro",
+    name: "Apple iPhone 17 Pro (Announced / Concept)",
+    brand: "apple",
+    category: "smartphones",
+    shortDescription: "Next-generation 2nm Apple A19 Pro titanium flagship with advanced periscope zoom and unified AI computation.",
+    description: "The upcoming Apple iPhone 17 Pro represents the pinnacle of mobile hardware engineering. Anticipated to feature the cutting-edge 2nm Apple A19 Pro chip, full titanium unibody, anti-reflective scratch-resistant display glass, and next-generation 48MP periscope telephoto imaging. Contact our concierge team on WhatsApp for release announcements, reservation priority, and launch availability in Sri Lanka.",
+    specifications: {
+      "Display": "6.3-inch Super Retina XDR OLED, 120Hz ProMotion, 3000 nits Peak Outdoor Brightness",
+      "Processor": "Apple A19 Pro (2nm TSMC architecture) with Next-Gen Apple Intelligence Neural Engine",
+      "Main Camera": "Triple 48MP Pro System (Wide 48MP Fusion + Ultra-Wide 48MP + 48MP Periscope 5x Optical Zoom)",
+      "Front Camera": "24MP TrueDepth with Auto-Focus and next-gen Face ID",
+      "Connectivity": "5G Sub-6/mmWave, Wi-Fi 7, Bluetooth 5.4, Thread, USB-C (USB 3 10Gbps)",
+      "Chassis": "Grade 5 Titanium with Sapphire-infused Ceramic Shield front",
+      "Charging": "Up to 35W Wired Fast Charging & MagSafe 25W Fast Wireless",
+      "Operating System": "iOS 19 / 20 with on-device Apple Intelligence",
+      "Warranty": "1 Year Apple International / Authorized Partner Warranty",
+    },
+    images: ["/images/products/iphone-17-pro.webp"],
+    price: null, // Price fluctuating / unreleased -> Contact for Price
+    compareAtPrice: null,
+    currency: "LKR",
+    variants: [
+      {
+        id: "var-ip17p-256-blu",
+        name: "256GB - Cosmic Blue Titanium",
+        price: null,
+        compareAtPrice: null,
+        sku: "IP17P-256-BLU",
+        inStock: false,
+        colorHex: "#2A3D54",
+      },
+      {
+        id: "var-ip17p-512-nat",
+        name: "512GB - Natural Titanium",
+        price: null,
+        compareAtPrice: null,
+        sku: "IP17P-512-NAT",
+        inStock: false,
+        colorHex: "#9E9A93",
+      },
+      {
+        id: "var-ip17p-1tb-obs",
+        name: "1TB - Obsidian Black Titanium",
+        price: null,
+        compareAtPrice: null,
+        sku: "IP17P-1TB-OBS",
+        inStock: false,
+        colorHex: "#1A1A1A",
+      },
+    ],
+    availability: "Confirm Availability",
+    featured: true,
+    newArrival: true,
+    trending: true,
+    status: "draft",
+    badge: "Concept / Pre-Order",
+    seo: {
+      title: "Apple iPhone 17 Pro Concept & Price in Sri Lanka | TONDEL.LK",
+      description: "Pre-order and enquire about Apple iPhone 17 Pro in Sri Lanka. Contact TONDEL on WhatsApp for release dates and availability.",
+      keywords: ["iPhone 17 Pro Sri Lanka", "iPhone 17 price LKR", "Apple 2026 concept", "TONDEL pre-order"],
+    },
+  },
+
+  // 3. Infinix Note 60 Ultra
+  {
+    id: "prod-infinix-note-60-ultra",
+    slug: "infinix-note-60-ultra",
+    name: "Infinix Note 60 Ultra",
+    brand: "infinix",
+    category: "smartphones",
+    shortDescription: "Ultra-fast gaming and multimedia beast with 144Hz 1.5K curved AMOLED, 200MP OIS camera, and 100W All-Round FastCharge.",
+    description: "The Infinix Note 60 Ultra redefines mid-flagship value with a stunning 6.78-inch 144Hz 1.5K 3D Curved AMOLED screen, MediaTek Dimensity high-performance processing, dual stereo speakers tuned by JBL, and an incredible 200MP Ultra-Clear OIS primary camera. Supports 100W wired fast charging for zero downtime.",
+    specifications: {
+      "Display": "6.78-inch 1.5K 144Hz 3D Curved AMOLED, 1300 nits peak, 2160Hz PWM dimming",
+      "Processor": "MediaTek Dimensity 8300 Ultra (4nm) Octa-Core with Vapor Chamber Liquid Cooling",
+      "Rear Camera": "200 MP Primary (OIS, f/1.75) + 50 MP Ultra-Wide/Macro + 2 MP Depth",
+      "Front Camera": "50 MP Autofocus Eye-Tracking Selfie Camera with Dual LED Flash",
+      "RAM & Storage": "12GB LPDDR5X + 12GB Extended RAM, 256GB / 512GB UFS 3.1",
+      "Battery & Charging": "5,500 mAh battery with 100W Multi-Speed FastCharge + 20W Wireless",
+      "Audio": "Dual Stereo Speakers with Sound by JBL & Hi-Res Audio certification",
+      "Operating System": "XOS based on Android with 3 years security patch support",
+      "Warranty": "1 Year Official Company Warranty in Sri Lanka",
+    },
+    images: ["/images/products/infinix-note-60-ultra.webp"],
+    price: null, // Fluctuating market price -> Contact for Price
+    compareAtPrice: null,
+    currency: "LKR",
+    variants: [
+      {
+        id: "var-inf-n60u-256-cyb",
+        name: "12GB+256GB - Cyber Titanium",
+        price: null,
+        compareAtPrice: null,
+        sku: "INF-N60U-256-CYB",
+        inStock: true,
+        colorHex: "#475569",
+      },
+      {
+        id: "var-inf-n60u-512-blk",
+        name: "12GB+512GB - Shadow Black",
+        price: null,
+        compareAtPrice: null,
+        sku: "INF-N60U-512-BLK",
+        inStock: true,
+        colorHex: "#0F172A",
+      },
+    ],
+    availability: "Confirm Availability",
+    featured: false,
+    newArrival: true,
+    trending: true,
+    status: "draft",
+    badge: "Ultra Specs",
+    seo: {
+      title: "Infinix Note 60 Ultra Price in Sri Lanka | TONDEL.LK",
+      description: "Discover Infinix Note 60 Ultra in Sri Lanka. 200MP OIS camera, 100W fast charge, 144Hz AMOLED screen. Direct WhatsApp ordering at TONDEL.",
+      keywords: ["Infinix Note 60 Ultra Sri Lanka", "Infinix 200MP phone", "TONDEL Infinix", "Infinix price LKR"],
+    },
+  },
+
+  // 4. Redmi Note 15 Pro
+  {
+    id: "prod-redmi-note-15-pro",
+    slug: "redmi-note-15-pro",
+    name: "Xiaomi Redmi Note 15 Pro",
+    brand: "xiaomi-redmi",
+    category: "smartphones",
+    shortDescription: "CrystalRes 1.5K Flow AMOLED, 200MP OIS camera, and IP68 waterproof design engineered for power users.",
+    description: "The Xiaomi Redmi Note 15 Pro delivers flagship-level aesthetics with an ultra-thin bezel 1.5K Flow AMOLED display, powerful Snapdragon architecture, and a 200MP Sony/Samsung sensor with optical image stabilization. Reinforced with Corning Gorilla Glass Victus 2 and IP68 dust/water protection.",
+    specifications: {
+      "Display": "6.67-inch CrystalRes 1.5K (2712 x 1220) 120Hz Flow AMOLED, Dolby Vision, HDR10+",
+      "Processor": "Qualcomm Snapdragon 7s Gen 3 (4nm) Octa-Core Processor",
+      "Rear Camera": "200 MP (OIS, 1/1.4\" sensor, 16-in-1 Super Pixel) + 8 MP Ultra-Wide + 2 MP Macro",
+      "Front Camera": "32 MP AI Portrait Camera with HDR",
+      "Battery": "5,400 mAh high-density cell with 67W Turbo Fast Charging",
+      "Durability": "IP68 Dust and Water Resistance, Wet Hand Touch 2.0 technology",
+      "Audio": "Stereo Speakers with Dolby Atmos support & Hi-Res Wireless",
+      "Operating System": "Xiaomi HyperOS based on Android",
+      "Warranty": "1 Year Xiaomi Sri Lanka Authorized Warranty",
+    },
+    images: ["/images/products/redmi-note-15-pro.webp"],
+    price: null,
+    compareAtPrice: null,
+    currency: "LKR",
+    variants: [
+      {
+        id: "var-rn15p-256-ocn",
+        name: "8GB+256GB - Midnight Ocean",
+        price: null,
+        compareAtPrice: null,
+        sku: "RN15P-256-OCN",
+        inStock: true,
+        colorHex: "#1E3A8A",
+      },
+      {
+        id: "var-rn15p-512-grn",
+        name: "12GB+512GB - Emerald Frost",
+        price: null,
+        compareAtPrice: null,
+        sku: "RN15P-512-GRN",
+        inStock: true,
+        colorHex: "#065F46",
+      },
+    ],
+    availability: "Confirm Availability",
+    featured: false,
+    newArrival: true,
+    trending: false,
+    status: "draft",
+    badge: "Upcoming 2026",
+    seo: {
+      title: "Xiaomi Redmi Note 15 Pro Price in Sri Lanka | TONDEL.LK",
+      description: "Enquire for Xiaomi Redmi Note 15 Pro in Sri Lanka. 200MP OIS camera, 1.5K Flow AMOLED, IP68 rating. Fast delivery from TONDEL.",
+      keywords: ["Redmi Note 15 Pro Sri Lanka", "Xiaomi Note 15 Pro LKR", "TONDEL Xiaomi phones", "Redmi Note 15"],
+    },
+  },
+
+  // 5. Redmi Note 14 5G
+  {
+    id: "prod-redmi-note-14-5g",
+    slug: "redmi-note-14-5g",
+    name: "Xiaomi Redmi Note 14 5G",
+    brand: "xiaomi-redmi",
+    category: "smartphones",
+    shortDescription: "Sleek 120Hz OLED display, Sony 50MP OIS sensor, dual 5G connectivity, and 5110 mAh all-day battery.",
+    description: "The Xiaomi Redmi Note 14 5G brings flagship camera performance to an accessible price point. Powered by the efficient MediaTek Dimensity 7025 Ultra 5G chipset, it features a 50MP Sony LYT-600 main camera with optical image stabilization, 120Hz smooth OLED display with 2100 nits brightness, and 45W turbo fast charging.",
+    specifications: {
+      "Display": "6.67-inch FHD+ (2400 x 1080) 120Hz OLED, 2100 nits Peak, SGS Low Blue Light certified",
+      "Processor": "MediaTek Dimensity 7025 Ultra (6nm) 5G Octa-Core Processor",
+      "Rear Camera": "50 MP Sony LYT-600 (f/1.5, OIS) + 2 MP Depth Sensor with 1080p@30fps video",
+      "Front Camera": "16 MP In-Display Camera with AI Face Unlock",
+      "Battery": "5,110 mAh battery with 45W Turbo Charging (in-box charger included)",
+      "Protection": "Corning Gorilla Glass 5, IP64 Splash & Dust Proofing",
+      "Connectivity": "Dual 5G SIM standby, Wi-Fi 5, Bluetooth 5.3, IR Blaster, 3.5mm Headphone Jack",
+      "Operating System": "Xiaomi HyperOS based on Android 14",
+      "Warranty": "1 Year Official Company Warranty",
+    },
+    images: ["/images/products/redmi-note-14-5g.webp"],
+    price: 69900,
+    compareAtPrice: 76500,
+    currency: "LKR",
+    variants: [
+      {
+        id: "var-rn14-128-blk",
+        name: "6GB+128GB - Phantom Black",
+        price: 69900,
+        compareAtPrice: 76500,
+        sku: "RN14-128-BLK",
+        inStock: true,
+        colorHex: "#111827",
+      },
+      {
+        id: "var-rn14-256-blu",
+        name: "8GB+256GB - Starry Blue",
+        price: 77900,
+        compareAtPrice: 84900,
+        sku: "RN14-256-BLU",
+        inStock: true,
+        colorHex: "#2563EB",
+      },
+      {
+        id: "var-rn14-256-grn",
+        name: "8GB+256GB - Aurora Green",
+        price: 77900,
+        compareAtPrice: 84900,
+        sku: "RN14-256-GRN",
+        inStock: true,
+        colorHex: "#059669",
+      },
+    ],
+    availability: "In Stock",
+    featured: true,
+    newArrival: true,
+    trending: true,
+    status: "active",
+    badge: "Hot Seller",
+    seo: {
+      title: "Xiaomi Redmi Note 14 5G Price in Sri Lanka | TONDEL.LK",
+      description: "Buy Xiaomi Redmi Note 14 5G in Sri Lanka at lowest prices. 50MP OIS Sony camera, 120Hz OLED screen, 1 year warranty. WhatsApp order with TONDEL.",
+      keywords: ["Redmi Note 14 5G Sri Lanka", "Xiaomi Note 14 LKR price", "budget 5G phone Sri Lanka", "TONDEL Xiaomi"],
+    },
+  },
+
+  // 6. Apple Watch Series 10
+  {
+    id: "prod-apple-watch-series-10",
+    slug: "apple-watch-series-10",
+    name: "Apple Watch Series 10 (GPS)",
+    brand: "apple",
+    category: "smart-watches",
+    shortDescription: "Apple's thinnest watch ever with wide-angle OLED display, advanced sleep apnea detection, and fast depth gauge.",
+    description: "The Apple Watch Series 10 is redesigned with a sleeker profile and the largest active screen area yet on an Apple Watch. Featuring the powerful S10 SiP, wide-angle OLED always-on display readable from sharp angles, sleep apnea notifications, water depth gauge to 6m, and fast charging reaching 80% battery in just 30 minutes.",
+    specifications: {
+      "Display": "Wide-Angle OLED Always-On Retina Display (up to 2000 nits, 40% brighter off-axis)",
+      "Case Thickness": "Ultra-slim 9.7 mm profile in polished aerospace aluminum",
+      "Processor": "Apple S10 SiP with 64-bit dual-core processor and 4-core Neural Engine",
+      "Health Sensors": "Electrical heart sensor (ECG), Third-gen optical heart sensor, Sleep Apnea detection, Wrist temperature",
+      "Water Resistance": "50m Water Resistant (Swimproof) + Depth gauge to 6m and water temperature sensor",
+      "Battery": "18 hours normal use (up to 36 hours in Low Power Mode) with ultra-fast charging",
+      "Audio": "Built-in speaker supporting direct media & podcast playback",
+      "Operating System": "watchOS with Smart Stack & Live Activities",
+      "Warranty": "1 Year Apple International / Store Warranty",
+    },
+    images: ["/images/products/apple-watch-series-10.webp", "/images/products/apple-watch-series-10-2.webp"],
+    price: 145000,
+    compareAtPrice: 159000,
+    currency: "LKR",
+    variants: [
+      {
+        id: "var-aw10-42-blk",
+        name: "42mm - Jet Black Sport Band",
+        price: 145000,
+        compareAtPrice: 159000,
+        sku: "AW10-42-BLK",
+        inStock: true,
+        colorHex: "#0B0C10",
+      },
+      {
+        id: "var-aw10-42-rsg",
+        name: "42mm - Rose Gold Sport Band",
+        price: 145000,
+        compareAtPrice: 159000,
+        sku: "AW10-42-RSG",
+        inStock: true,
+        colorHex: "#E5B4A2",
+      },
+      {
+        id: "var-aw10-46-blk",
+        name: "46mm - Jet Black Sport Band",
+        price: 158000,
+        compareAtPrice: 172000,
+        sku: "AW10-46-BLK",
+        inStock: true,
+        colorHex: "#0B0C10",
+      },
+      {
+        id: "var-aw10-46-slv",
+        name: "46mm - Silver Sport Band",
+        price: 158000,
+        compareAtPrice: 172000,
+        sku: "AW10-46-SLV",
+        inStock: true,
+        colorHex: "#D1D5DB",
+      },
+    ],
+    availability: "In Stock",
+    featured: true,
+    newArrival: true,
+    trending: true,
+    status: "active",
+    badge: "New 2026",
+    seo: {
+      title: "Apple Watch Series 10 Price in Sri Lanka | TONDEL.LK",
+      description: "Buy Apple Watch Series 10 in Sri Lanka. 42mm & 46mm GPS models, Jet Black finish, 1 year warranty. Order directly via WhatsApp at TONDEL.",
+      keywords: ["Apple Watch Series 10 Sri Lanka", "Apple Watch price LKR", "Series 10 46mm Colombo", "TONDEL smart watch"],
+    },
+  },
+
+  // 7. Xiaomi Smart Band 10
+  {
+    id: "prod-xiaomi-smart-band-10",
+    slug: "xiaomi-smart-band-10",
+    name: "Xiaomi Smart Band 10 Fitness Tracker",
+    brand: "xiaomi-redmi",
+    category: "smart-watches",
+    shortDescription: "1.62-inch 60Hz AMOLED screen, up to 21-day battery life, 150+ sports modes, and 5ATM water resistance.",
+    description: "The Xiaomi Smart Band 10 delivers comprehensive health and fitness tracking in a featherlight form factor. Highlights include a bright 1.62-inch 60Hz AMOLED display with automatic ambient light adjustment, continuous SpO2 and heart-rate monitoring, comprehensive sleep stage analysis, and up to 21 days of battery on a single charge.",
+    specifications: {
+      "Display": "1.62-inch AMOLED 60Hz Touchscreen (192 x 490 pixels, 1200 nits peak auto-brightness)",
+      "Battery Life": "Up to 21 days typical usage, 9 days in Always-On Display mode (Magnetic Fast Charger)",
+      "Health Tracking": "24/7 Heart Rate, Continuous SpO2, Sleep Breathing Quality, Stress, Female Cycle Tracking",
+      "Sports Tracking": "150+ Fitness Modes, Running Clip mode support, Pebble mode shoe sensor compatible",
+      "Water Resistance": "5ATM (Water resistant up to 50 meters, suitable for swimming)",
+      "Connectivity": "Bluetooth 5.4 BLE, compatible with Mi Fitness App on Android & iOS",
+      "Haptics": "Linear vibration motor with custom haptic notification patterns",
+      "Warranty": "6 Months Official Warranty in Sri Lanka",
+    },
+    images: ["/images/products/xiaomi-smart-band-10.webp"],
+    price: 14500,
+    compareAtPrice: 17900,
+    currency: "LKR",
+    variants: [
+      {
+        id: "var-xsb10-blk",
+        name: "Midnight Black TPU",
+        price: 14500,
+        compareAtPrice: 17900,
+        sku: "XSB10-BLK",
+        inStock: true,
+        colorHex: "#18181B",
+      },
+      {
+        id: "var-xsb10-slv",
+        name: "Glacier Silver TPU",
+        price: 14500,
+        compareAtPrice: 17900,
+        sku: "XSB10-SLV",
+        inStock: true,
+        colorHex: "#E2E8F0",
+      },
+      {
+        id: "var-xsb10-rse",
+        name: "Arctic Rose TPU",
+        price: 14500,
+        compareAtPrice: 17900,
+        sku: "XSB10-RSE",
+        inStock: true,
+        colorHex: "#FBCFE8",
+      },
+    ],
+    availability: "In Stock",
+    featured: false,
+    newArrival: true,
+    trending: true,
+    status: "active",
+    badge: "Best Value",
+    seo: {
+      title: "Xiaomi Smart Band 10 Price in Sri Lanka | TONDEL.LK",
+      description: "Buy Xiaomi Smart Band 10 fitness tracker in Sri Lanka. 21-day battery, 150+ sports modes, AMOLED screen. Fast island-wide delivery from TONDEL.",
+      keywords: ["Xiaomi Smart Band 10 Sri Lanka", "Mi Band 10 price LKR", "fitness tracker Sri Lanka", "TONDEL wearable"],
+    },
+  },
+
+  // 8. AirPods Max-style Luxury Over-Ear Headphones
+  {
+    id: "prod-luxury-overear-headphones",
+    slug: "luxury-overear-headphones",
+    name: "Luxury ANC Wireless Over-Ear Headphones (AirPods Max Edition)",
+    brand: "apple",
+    category: "audio",
+    shortDescription: "Audiophile high-fidelity audio, computational Active Noise Cancellation, and breathable acoustic mesh canopy.",
+    description: "Experience acoustic perfection with luxury over-ear wireless headphones. Engineered with custom dynamic drivers, dual computational audio processors, pro-level Active Noise Cancellation with Transparency mode, and Personalized Spatial Audio with dynamic head tracking. Outfitted with breathable acoustic knit mesh headband and anodized aluminum earcups for all-day comfort.",
+    specifications: {
+      "Acoustic Driver": "Custom 40mm dynamic driver with dual neodymium ring magnet motor (near-zero distortion)",
+      "Audio Technology": "Active Noise Cancellation, Transparency Mode, Personalized Spatial Audio with Dynamic Head Tracking",
+      "Processors": "Dual computational audio H1 chips running 10 audio cores each",
+      "Microphones": "Nine microphones total (eight for Active Noise Cancellation, three for voice pickup with beamforming)",
+      "Battery Life": "Up to 20 hours continuous listening with ANC/Spatial Audio active (USB-C Fast Charging)",
+      "Materials": "Stainless steel telescoping arms, breathable knit mesh canopy, acoustically engineered memory foam cushions",
+      "Connectivity": "Bluetooth 5.3 with seamless device switching",
+      "Warranty": "1 Year International / Seller Warranty",
+    },
+    images: ["/images/products/luxury-overear-headphones.webp", "/images/products/luxury-overear-headphones-2.webp"],
+    price: 185000,
+    compareAtPrice: 205000,
+    currency: "LKR",
+    variants: [
+      {
+        id: "var-apm-spg",
+        name: "Space Gray Anodized",
+        price: 185000,
+        compareAtPrice: 205000,
+        sku: "APM-SPG",
+        inStock: true,
+        colorHex: "#4B5563",
+      },
+      {
+        id: "var-apm-slv",
+        name: "Silver Metallic",
+        price: 185000,
+        compareAtPrice: 205000,
+        sku: "APM-SLV",
+        inStock: true,
+        colorHex: "#E5E7EB",
+      },
+      {
+        id: "var-apm-blu",
+        name: "Sky Blue Edition",
+        price: 185000,
+        compareAtPrice: 205000,
+        sku: "APM-BLU",
+        inStock: true,
+        colorHex: "#93C5FD",
+      },
+      {
+        id: "var-apm-str",
+        name: "Starlight Warm Gold",
+        price: 185000,
+        compareAtPrice: 205000,
+        sku: "APM-STR",
+        inStock: true,
+        colorHex: "#F3E8D0",
+      },
+    ],
+    availability: "In Stock",
+    featured: true,
+    newArrival: false,
+    trending: true,
+    status: "active",
+    badge: "Audiophile Grade",
+    seo: {
+      title: "Luxury ANC Wireless Over-Ear Headphones Price in Sri Lanka | TONDEL.LK",
+      description: "Buy Luxury Over-Ear Wireless ANC Headphones in Sri Lanka. Spatial audio, premium aluminum build, 20-hour battery. WhatsApp ordering at TONDEL.",
+      keywords: ["AirPods Max Sri Lanka", "over ear headphones Colombo", "ANC headphones LKR", "luxury wireless headphones"],
+    },
+  },
+
+  // 9. Bluetooth Party Speaker High-Bass
+  {
+    id: "prod-bluetooth-party-speaker",
+    slug: "bluetooth-party-speaker",
+    name: "High-Bass Wireless RGB Bluetooth Party Speaker",
+    brand: "sony",
+    category: "speakers",
+    shortDescription: "60W RMS room-filling high bass, synchronized 360° RGB beat lights, 16-hour battery, and IPX6 splashproof build.",
+    description: "Turn every gathering into an unforgettable event with this 60W RMS High-Bass Party Speaker. Boasting dual subwoofers with passive bass radiators, dynamic rhythmic RGB lighting that dances to the beat, up to 16 hours of continuous playback, and TWS wireless linking to connect two speakers together in true stereo.",
+    specifications: {
+      "Power Output": "60W RMS (Peak 120W) High-Impact Bass System",
+      "Acoustic Components": "Dual 3-inch Subwoofers + Dual 1.5-inch Tweeters + Dual Passive Bass Radiators",
+      "Lighting": "Full-spectrum 360° Synchronized RGB Dynamic Beat Lighting with 7 preset modes",
+      "Battery Capacity": "8,000 mAh rechargeable lithium cell (Up to 16 hours playback at moderate volume)",
+      "Waterproof Rating": "IPX6 Splash and Spill Proof certified",
+      "Connectivity": "Bluetooth 5.3, USB Flash Drive reader, MicroSD card slot, AUX 3.5mm, 6.35mm Karaoke Mic input",
+      "Special Features": "TWS Stereo Link (Pair 2 units wirelessly), Built-in Power Bank function to charge phones",
+      "Warranty": "6 Months Store Warranty with Replacement Support",
+    },
+    images: ["/images/products/bluetooth-party-speaker.webp", "/images/products/bluetooth-party-speaker-2.webp"],
+    price: 28500,
+    compareAtPrice: 34000,
+    currency: "LKR",
+    variants: [
+      {
+        id: "var-spk-party-blk",
+        name: "Midnight Stealth Black",
+        price: 28500,
+        compareAtPrice: 34000,
+        sku: "SPK-PARTY-BLK",
+        inStock: true,
+        colorHex: "#111827",
+      },
+      {
+        id: "var-spk-party-blu",
+        name: "Electric Camo Blue",
+        price: 29500,
+        compareAtPrice: 35000,
+        sku: "SPK-PARTY-BLU",
+        inStock: true,
+        colorHex: "#1E3A8A",
+      },
+    ],
+    availability: "In Stock",
+    featured: true,
+    newArrival: false,
+    trending: true,
+    status: "active",
+    badge: "Party Bass",
+    seo: {
+      title: "High-Bass RGB Bluetooth Party Speaker Price in Sri Lanka | TONDEL.LK",
+      description: "Buy 60W High-Bass RGB Bluetooth Party Speaker in Sri Lanka. Deep punchy bass, 16h battery, mic input, IPX6 water resistance. WhatsApp order with TONDEL.",
+      keywords: ["party speaker Sri Lanka", "bluetooth speaker high bass LKR", "RGB speaker Colombo", "wireless party audio"],
+    },
+  },
+
+  // 10. 65W GaN Fast Charging Adapter
+  {
+    id: "prod-65w-gan-fast-charger",
+    slug: "65w-gan-fast-charger",
+    name: "Anker 65W GaN Dual-Port Fast Charger Adapter",
+    brand: "anker",
+    category: "chargers-cables",
+    shortDescription: "Ultra-compact Gallium Nitride 65W fast charger with dual USB-C and USB-A ports for laptops and phones.",
+    description: "Replace your bulky laptop and phone chargers with this palm-sized 65W GaN Fast Charger from Anker. Powered by advanced Gallium Nitride (GaN III) technology, it delivers high-speed charging to laptops, tablets, iPhones, and Android devices while generating significantly less heat. Equipped with intelligent dynamic power distribution.",
+    specifications: {
+      "Total Wattage": "65W High-Speed Output (Power Delivery 3.0 / PPS / Quick Charge 4.0+)",
+      "Ports": "2x USB-C (up to 65W solo) + 1x USB-A (up to 22.5W fast charge)",
+      "Semiconductor": "GaN III (Gallium Nitride) with ActiveShield 2.0 Temperature Protection",
+      "Compatibility": "MacBook Pro/Air, iPhone 11-17, Samsung Galaxy S23/S24, Xiaomi, iPad, Steam Deck, Laptops",
+      "Dimensions": "52 x 41 x 38 mm (53% smaller than standard 67W single-port adapters)",
+      "Safety Certifications": "CE, FCC, RoHS certified with Over-voltage and Short-circuit protection",
+      "Plug Type": "UK Standard 3-Pin (compatible with Sri Lanka wall sockets)",
+      "Warranty": "18 Months Official Anker Warranty",
+    },
+    images: ["/images/products/65w-gan-fast-charger.webp"],
+    price: 8500,
+    compareAtPrice: 10500,
+    currency: "LKR",
+    variants: [
+      {
+        id: "var-ank-65w-blk",
+        name: "Matte Charcoal Black",
+        price: 8500,
+        compareAtPrice: 10500,
+        sku: "ANK-65W-BLK",
+        inStock: true,
+        colorHex: "#1F2937",
+      },
+      {
+        id: "var-ank-65w-wht",
+        name: "Arctic Gloss White",
+        price: 8500,
+        compareAtPrice: 10500,
+        sku: "ANK-65W-WHT",
+        inStock: true,
+        colorHex: "#F9FAFB",
+      },
+    ],
+    availability: "In Stock",
+    featured: true,
+    newArrival: false,
+    trending: false,
+    status: "active",
+    badge: "GaN Fast Tech",
+    seo: {
+      title: "Anker 65W GaN Fast Charger Adapter in Sri Lanka | TONDEL.LK",
+      description: "Buy original Anker 65W GaN fast charger in Sri Lanka. Charge laptops, iPhone, and Samsung phones simultaneously. 18 months warranty. TONDEL.LK.",
+      keywords: ["Anker 65W GaN Sri Lanka", "fast charger adapter Colombo", "laptop charger USB-C LKR", "TONDEL charger"],
+    },
+  },
+
+  // 11. Braided Type-C Fast Data Cable
+  {
+    id: "prod-braided-type-c-cable",
+    slug: "braided-type-c-cable",
+    name: "Baseus 100W Fast Charging Braided Type-C to Type-C Cable",
+    brand: "baseus",
+    category: "chargers-cables",
+    shortDescription: "100W high-current Type-C cable with durable nylon braiding, zinc alloy connectors, and E-Marker protection.",
+    description: "Charge high-draw laptops and smartphones at maximum throughput with the Baseus 100W Braided Type-C to Type-C cable. Built with high-density ballistic nylon braiding and reinforced stress relief collars tested to endure over 20,000 bends. Includes an intelligent E-Marker chip to regulate voltage and safeguard your device battery.",
+    specifications: {
+      "Max Power Throughput": "100W Power Delivery (20V / 5A Max) Ultra Fast Charging",
+      "Data Transfer Rate": "480 Mbps USB 2.0 High-Speed File Transfer",
+      "Cable Core": "Thickened tinned copper wire with multi-layer foil shielding",
+      "Outer Material": "Tough ballistic nylon braiding with anti-fraying weave",
+      "Connectors": "Anodized zinc alloy housings with gold-plated internal pins",
+      "Durability Testing": "20,000+ bend lifespan and 50kg tensile pull resistance",
+      "Chipset": "Smart E-Marker Chip for automatic current calibration",
+      "Warranty": "6 Months Replacement Warranty",
+    },
+    images: ["/images/products/braided-type-c-cable.webp"],
+    price: 2200,
+    compareAtPrice: 2800,
+    currency: "LKR",
+    variants: [
+      {
+        id: "var-bas-100w-1m-gry",
+        name: "1 Meter - Space Gray",
+        price: 2200,
+        compareAtPrice: 2800,
+        sku: "BAS-100W-1M-GRY",
+        inStock: true,
+        colorHex: "#4B5563",
+      },
+      {
+        id: "var-bas-100w-2m-gry",
+        name: "2 Meter - Space Gray",
+        price: 2800,
+        compareAtPrice: 3400,
+        sku: "BAS-100W-2M-GRY",
+        inStock: true,
+        colorHex: "#4B5563",
+      },
+      {
+        id: "var-bas-100w-1m-grn",
+        name: "1 Meter - Emerald Green",
+        price: 2200,
+        compareAtPrice: 2800,
+        sku: "BAS-100W-1M-GRN",
+        inStock: true,
+        colorHex: "#065F46",
+      },
+    ],
+    availability: "In Stock",
+    featured: false,
+    newArrival: false,
+    trending: true,
+    status: "active",
+    badge: "Top Accessory",
+    seo: {
+      title: "Baseus 100W Braided Type-C Fast Cable Price in Sri Lanka | TONDEL.LK",
+      description: "Buy Baseus 100W Braided Type-C to Type-C fast charging cable in Sri Lanka. High durability, laptop compatible, instant WhatsApp delivery at TONDEL.",
+      keywords: ["Type C cable 100W Sri Lanka", "Baseus braided cable Colombo", "fast charging cable LKR", "TONDEL cables"],
+    },
+  },
+
+  // 12. Ergonomic Wireless Mouse
+  {
+    id: "prod-ergonomic-wireless-mouse",
+    slug: "ergonomic-wireless-mouse",
+    name: "Xiaomi Silent Ergonomic Dual-Mode Wireless Mouse",
+    brand: "xiaomi-redmi",
+    category: "computer-accessories",
+    shortDescription: "Whisper-quiet clicks, dual Bluetooth & 2.4GHz connectivity, 1300 DPI tracking, and 12-month battery life.",
+    description: "Work in silence and comfort with the Xiaomi Dual-Mode Silent Wireless Mouse. Featuring soft-click microswitches under 40dB, seamless pairing between two devices via Bluetooth and 2.4GHz USB receiver, ergonomic contoured palm support, and a high-accuracy 1300 DPI optical sensor that glides smoothly on desk surfaces.",
+    specifications: {
+      "Connectivity": "Dual-Mode (Bluetooth 4.2 BLE + 2.4GHz Wireless with USB Nano Receiver)",
+      "Click Mechanism": "Silent micro-switch buttons (acoustic click noise reduced below 40 dB)",
+      "Sensor": "1300 DPI High-Precision Optical Tracking Sensor",
+      "Ergonomics": "Right-hand asymmetric palm curve with skin-friendly UV matte texture",
+      "Buttons": "5 Buttons (Left, Right, Aluminum Scroll Wheel, Mode Switch, Forward/Back thumb buttons)",
+      "Battery Life": "Up to 12 months with 2x AAA batteries with auto-sleep power saving",
+      "Compatibility": "Windows 11/10/8, macOS 10.10+, ChromeOS, Linux, Android, iPadOS",
+      "Warranty": "6 Months Store Warranty with Replacement Support",
+    },
+    images: ["/images/products/ergonomic-wireless-mouse.webp"],
+    price: 4800,
+    compareAtPrice: 5900,
+    currency: "LKR",
+    variants: [
+      {
+        id: "var-mi-mou-blk",
+        name: "Obsidian Black Matte",
+        price: 4800,
+        compareAtPrice: 5900,
+        sku: "MI-MOU-BLK",
+        inStock: true,
+        colorHex: "#18181B",
+      },
+      {
+        id: "var-mi-mou-wht",
+        name: "Off-White Silver Accent",
+        price: 4800,
+        compareAtPrice: 5900,
+        sku: "MI-MOU-WHT",
+        inStock: true,
+        colorHex: "#F4F4F5",
+      },
+    ],
+    availability: "In Stock",
+    featured: false,
+    newArrival: false,
+    trending: false,
+    status: "active",
+    badge: "Silent Click",
+    seo: {
+      title: "Xiaomi Silent Ergonomic Wireless Mouse in Sri Lanka | TONDEL.LK",
+      description: "Buy Xiaomi Silent Ergonomic Dual-Mode wireless mouse in Sri Lanka. Quiet clicks, dual Bluetooth & USB, 12-month battery. Order on WhatsApp with TONDEL.",
+      keywords: ["Xiaomi wireless mouse Sri Lanka", "silent mouse Colombo", "ergonomic Bluetooth mouse LKR", "TONDEL mouse"],
+    },
+  },
+
+  // 13. Midea Smart Digital Rice Cooker
+  {
+    id: "prod-midea-smart-rice-cooker",
+    slug: "midea-smart-rice-cooker",
+    name: "Midea 1.8L Smart Digital Fuzzy Logic Rice Cooker",
+    brand: "midea",
+    category: "home-appliances",
+    shortDescription: "Microcomputer fuzzy logic 6-stage cooking curve, 1.7mm non-stick honeycomb pot, and 24h delay timer.",
+    description: "Enjoy fluffy, perfectly cooked rice every single day with the genuine Midea 1.8L Smart Digital Fuzzy Logic Rice Cooker. Utilizing intelligent microcomputer temperature sensors, it automatically regulates boiling and simmering across 6 cooking stages. Features a heavy-duty 1.7mm non-stick honeycomb inner pot, multiple cooking presets (White Rice, Brown Rice, Porridge, Soup, Steam), and a 24-hour preset delay timer.",
+    specifications: {
+      "Capacity": "1.8 Liters (Cooks up to 10 cups of raw rice, suitable for 4 to 8 persons)",
+      "Heating Technology": "Fuzzy Logic Smart Microcomputer with 6-Stage Temperature Control",
+      "Inner Pot": "1.7mm 5-Layer Honeycomb Non-Stick Inner Pot with dual handles",
+      "Cooking Presets": "White Rice, Quick Cook, Brown/Brown Grain, Congee/Porridge, Soup, Steam, Slow Cook, Reheat",
+      "Display": "Large LED Digital Touch Control Interface with Countdown Timer",
+      "Keep Warm": "Automatic 24-Hour Keep Warm & 24-Hour Preset Start Timer",
+      "Power Rating": "760W - 900W Energy Saving Heating Plate (220V - 240V Sri Lanka Compatible)",
+      "Included Accessories": "BPA-Free Food Steamer Basket, Measuring Cup, Non-Stick Rice Paddle, Soup Ladle",
+      "Warranty": "2 Years Official Midea Sri Lanka Warranty",
+    },
+    images: ["/images/products/midea-smart-rice-cooker.webp", "/images/products/midea-smart-rice-cooker-2.webp"],
+    price: 19500,
+    compareAtPrice: 23500,
+    currency: "LKR",
+    variants: [
+      {
+        id: "var-mid-rc-18l-slv",
+        name: "1.8L - Brushed Metallic Silver",
+        price: 19500,
+        compareAtPrice: 23500,
+        sku: "MID-RC-18L-SLV",
+        inStock: true,
+        colorHex: "#94A3B8",
+      },
+      {
+        id: "var-mid-rc-18l-wht",
+        name: "1.8L - Clean Pearl White",
+        price: 19500,
+        compareAtPrice: 23500,
+        sku: "MID-RC-18L-WHT",
+        inStock: true,
+        colorHex: "#F8FAFC",
+      },
+    ],
+    availability: "In Stock",
+    featured: true,
+    newArrival: false,
+    trending: true,
+    status: "active",
+    badge: "Smart Kitchen",
+    seo: {
+      title: "Midea 1.8L Smart Digital Rice Cooker Price in Sri Lanka | TONDEL.LK",
+      description: "Buy genuine Midea 1.8L Smart Fuzzy Logic Digital Rice Cooker in Sri Lanka. 2-year warranty, non-stick pot, fast island-wide delivery from TONDEL.",
+      keywords: ["Midea rice cooker Sri Lanka", "digital rice cooker price LKR", "Midea 1.8L cooker Colombo", "smart kitchen appliances"],
+    },
+  },
+
+  // 14. Midea Digital Air Fryer
+  {
+    id: "prod-midea-digital-air-fryer",
+    slug: "midea-digital-air-fryer",
+    name: "Midea 4.5L Digital Touchscreen Oil-Free Air Fryer",
+    brand: "midea",
+    category: "home-appliances",
+    shortDescription: "Healthy 360° rapid air circulation, 8 digital presets, PFOA-free non-stick basket, and 85% oil reduction.",
+    description: "Crispy, delicious fried meals with up to 85% less fat. The Midea 4.5L Digital Air Fryer features high-velocity 360° thermo-cyclone technology for uniform browning without messy cooking oil. Includes an intuitive digital LED touchscreen with 8 one-touch cooking presets, auto shut-off safety protection, and a dishwasher-safe non-stick frying basket.",
+    specifications: {
+      "Capacity": "4.5 Liters XL Family Capacity (fits a whole 1.5kg chicken)",
+      "Power Rating": "1,500W High-Efficiency Rapid Heating Element",
+      "Temperature Control": "80°C to 200°C Adjustable Precision Temperature",
+      "Timer": "0 to 60 Minutes Digital Auto-Cutoff Timer with Shake Reminder tone",
+      "Presets": "8 One-Touch Presets: French Fries, Chicken Wings, Steak, Shrimp, Fish, Baking/Cakes, Dehydrate, Reheat",
+      "Safety": "Auto-Pause upon basket removal, Overheat thermal fuse protection",
+      "Basket Coating": "Food-grade PFOA-free non-stick coating (Dishwasher safe)",
+      "Warranty": "2 Years Official Midea Sri Lanka Warranty",
+    },
+    images: ["/images/products/midea-digital-air-fryer.webp", "/images/products/midea-digital-air-fryer-2.webp"],
+    price: 26900,
+    compareAtPrice: 32000,
+    currency: "LKR",
+    variants: [
+      {
+        id: "var-mid-af-45l-blk",
+        name: "4.5L - Matte Black with Rose Gold Accents",
+        price: 26900,
+        compareAtPrice: 32000,
+        sku: "MID-AF-45L-BLK",
+        inStock: true,
+        colorHex: "#18181B",
+      },
+    ],
+    availability: "In Stock",
+    featured: true,
+    newArrival: false,
+    trending: true,
+    status: "active",
+    badge: "Healthy Living",
+    seo: {
+      title: "Midea 4.5L Digital Air Fryer Price in Sri Lanka | TONDEL.LK",
+      description: "Buy Midea 4.5L digital touchscreen air fryer in Sri Lanka. 1500W oil-free rapid air frying, 2 years warranty, WhatsApp order with TONDEL.",
+      keywords: ["Midea air fryer Sri Lanka", "digital air fryer price LKR", "oil free fryer Colombo", "healthy cooking appliances"],
+    },
+  },
+
+  // 15. Midea Electric Kettle
+  {
+    id: "prod-midea-electric-kettle",
+    slug: "midea-electric-kettle",
+    name: "Midea 1.7L Double-Wall Stainless Steel Electric Kettle",
+    brand: "midea",
+    category: "home-appliances",
+    shortDescription: "1850W rapid boil, double-wall cool-touch body, Food-Grade 304 Stainless Steel interior, and Strix thermostat.",
+    description: "Boil water quickly and safely with the Midea 1.7L Double-Wall Electric Kettle. Designed with a dual-layer thermal wall, the exterior remains cool to the touch even while water is boiling inside. Constructed with seamless Food-Grade 304 Stainless Steel, world-class British Strix thermostat controller, and one-touch slow-open lid to prevent boiling steam splashes.",
+    specifications: {
+      "Capacity": "1.7 Liters (Brings up to 8 cups of water to rolling boil in under 5 minutes)",
+      "Power": "1850W - 2200W Rapid Boil Concealed Stainless Element",
+      "Safety Controller": "Genuine British Strix Thermostat with Automatic Shut-Off on boil",
+      "Protection": "Boil-Dry Protection & Overheat Thermal Cut-Out",
+      "Internal Chamber": "Seamless 100% Food-Grade 304 Stainless Steel (Zero plastic contact with boiling water)",
+      "Exterior": "Cool-Touch double insulation to prevent accidental scalds",
+      "Base": "360° Swivel cordless power base with cord wrap underneath",
+      "Warranty": "1 Year Official Midea Sri Lanka Warranty",
+    },
+    images: ["/images/products/midea-electric-kettle.webp"],
+    price: 7500,
+    compareAtPrice: 8900,
+    currency: "LKR",
+    variants: [
+      {
+        id: "var-mid-ket-17l-blk",
+        name: "1.7L - Matte Night Black",
+        price: 7500,
+        compareAtPrice: 8900,
+        sku: "MID-KET-17L-BLK",
+        inStock: true,
+        colorHex: "#1C1917",
+      },
+      {
+        id: "var-mid-ket-17l-wht",
+        name: "1.7L - Glacier Soft White",
+        price: 7500,
+        compareAtPrice: 8900,
+        sku: "MID-KET-17L-WHT",
+        inStock: true,
+        colorHex: "#F5F5F4",
+      },
+    ],
+    availability: "In Stock",
+    featured: false,
+    newArrival: false,
+    trending: false,
+    status: "active",
+    badge: "Kitchen Essential",
+    seo: {
+      title: "Midea 1.7L Double-Wall Electric Kettle in Sri Lanka | TONDEL.LK",
+      description: "Buy Midea 1.7L cool-touch double-wall electric kettle in Sri Lanka. 304 stainless steel interior, Strix safety control, 1-year warranty at TONDEL.",
+      keywords: ["Midea electric kettle Sri Lanka", "stainless steel kettle Colombo", "cool touch kettle LKR", "Midea appliances"],
+    },
+  },
+
+  // 16. Midea High-Speed Blender
+  {
+    id: "prod-midea-high-speed-blender",
+    slug: "midea-high-speed-blender",
+    name: "Midea 600W High-Speed Nutrient Extractor Blender",
+    brand: "midea",
+    category: "home-appliances",
+    shortDescription: "600W pure copper motor, 6-leaf stainless steel crushing blades, 1.5L jar with on-the-go travel cup.",
+    description: "Extract maximum nutrients and crush through ice effortlessly with the Midea 600W High-Speed Blender. Featuring 6-blade 3D stainless steel vortex cutters, 2 speed levels with pulse control, a durable 1.5-liter scratch-resistant glass pitcher, and a portable travel smoothie bottle so you can blend and drink immediately.",
+    specifications: {
+      "Motor Power": "600W Pure Copper High-Torque Motor with Thermal Reset Fuse",
+      "Blades": "Heavy-Duty 6-Leaf 3D Crushing Blades in Food-Grade Stainless Steel",
+      "Speed Settings": "2 Speed Continuous Rotary Dial + Instant Pulse Control",
+      "Jar Capacity": "1.5L BPA-Free Thermal Shock Resistant Pitcher + 500ml To-Go Sports Bottle",
+      "Safety System": "Dual Interlocking Safety Mechanism (will not spin unless locked)",
+      "Base": "Non-slip rubber suction feet for zero vibration during heavy ice blending",
+      "Cleanup": "Detachable blade assembly and dishwasher-friendly blending jars",
+      "Warranty": "2 Years Official Midea Sri Lanka Warranty",
+    },
+    images: ["/images/products/midea-high-speed-blender.webp"],
+    price: 13900,
+    compareAtPrice: 16500,
+    currency: "LKR",
+    variants: [
+      {
+        id: "var-mid-bln-600w-tit",
+        name: "600W - Brushed Titanium Silver",
+        price: 13900,
+        compareAtPrice: 16500,
+        sku: "MID-BLN-600W-TIT",
+        inStock: true,
+        colorHex: "#64748B",
+      },
+    ],
+    availability: "In Stock",
+    featured: false,
+    newArrival: false,
+    trending: true,
+    status: "active",
+    badge: "Nutri-Power",
+    seo: {
+      title: "Midea 600W High-Speed Nutrient Blender Price in Sri Lanka | TONDEL.LK",
+      description: "Buy Midea 600W high-speed smoothie and ice-crushing blender in Sri Lanka. 2-year warranty, includes travel cup. WhatsApp ordering with TONDEL.",
+      keywords: ["Midea blender Sri Lanka", "high speed blender Colombo", "smoothie maker price LKR", "Midea kitchen mixer"],
+    },
+  },
+];
+
+// Helper Functions
+export function getAllProducts(): Product[] {
+  return products;
+}
+
+export function getProductBySlug(slug: string): Product | undefined {
+  return products.find((p) => p.slug === slug);
+}
+
+export function getProductById(id: string): Product | undefined {
+  return products.find((p) => p.id === id);
+}
+
+export function getFeaturedProducts(): Product[] {
+  return products.filter((p) => p.featured && p.status === "active");
+}
+
+export function getNewArrivals(): Product[] {
+  return products.filter((p) => p.newArrival && p.status === "active");
+}
+
+export function getTrendingProducts(): Product[] {
+  return products.filter((p) => p.trending && p.status === "active");
+}
+
+export function getProductsByCategory(categorySlug: string): Product[] {
+  if (categorySlug === "offers") {
+    return products.filter(
+      (p) => p.compareAtPrice !== null && p.price !== null && p.compareAtPrice > p.price
+    );
+  }
+  return products.filter((p) => p.category === categorySlug);
+}
+
+export function getProductsByBrand(brandSlug: string): Product[] {
+  return products.filter((p) => p.brand === brandSlug);
+}
+
+export function getSpecialOffers(): Product[] {
+  return products.filter(
+    (p) => p.compareAtPrice !== null && p.price !== null && p.compareAtPrice > p.price
+  );
+}
+
+export function getRelatedProducts(productId: string, limit: number = 4): Product[] {
+  const current = getProductById(productId);
+  if (!current) return products.slice(0, limit);
+
+  return products
+    .filter((p) => p.id !== productId && (p.category === current.category || p.brand === current.brand))
+    .slice(0, limit);
+}
+
+export function searchProducts(query: string): Product[] {
+  const q = query.toLowerCase().trim();
+  if (!q) return [];
+
+  return products.filter(
+    (p) =>
+      p.name.toLowerCase().includes(q) ||
+      p.shortDescription.toLowerCase().includes(q) ||
+      p.brand.toLowerCase().includes(q) ||
+      p.category.toLowerCase().includes(q) ||
+      (p.seo.keywords && p.seo.keywords.some((k) => k.toLowerCase().includes(q)))
+  );
+}

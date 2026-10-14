@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg-bluetooth-party-speaker" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070C1A"/>
+      <stop offset="50%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#15213F"/>
+    </linearGradient>
+    <radialGradient id="radial-bluetooth-party-speaker" cx="50%" cy="45%" r="60%">
+      <stop offset="0%" stop-color="#F59E0B" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#F59E0B" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="600" height="600" rx="30" fill="url(#bg-bluetooth-party-speaker)"/>
+  <rect width="600" height="600" rx="30" fill="url(#radial-bluetooth-party-speaker)"/>
+  <rect x="2" y="2" width="596" height="596" rx="28" fill="none" stroke="#FFFFFF" stroke-opacity="0.08" stroke-width="2"/>
+  
+  <!-- Subtle tech background grid -->
+  <g opacity="0.06" stroke="#FFFFFF" stroke-width="1">
+    <line x1="100" y1="0" x2="100" y2="600"/>
+    <line x1="200" y1="0" x2="200" y2="600"/>
+    <line x1="300" y1="0" x2="300" y2="600"/>
+    <line x1="400" y1="0" x2="400" y2="600"/>
+    <line x1="500" y1="0" x2="500" y2="600"/>
+    <line x1="0" y1="100" x2="600" y2="100"/>
+    <line x1="0" y1="200" x2="600" y2="200"/>
+    <line x1="0" y1="300" x2="600" y2="300"/>
+    <line x1="0" y1="400" x2="600" y2="400"/>
+    <line x1="0" y1="500" x2="600" y2="500"/>
+  </g>
+  
+  <!-- Brand & Category Tag -->
+  <rect x="40" y="40" width="130" height="28" rx="14" fill="#F59E0B" fill-opacity="0.15" stroke="#F59E0B" stroke-width="1.2"/>
+  <text x="105" y="58" text-anchor="middle" fill="#F59E0B" font-family="system-ui, sans-serif" font-weight="700" font-size="11" letter-spacing="1">SONY</text>
+  
+  <!-- Genuine Verification Stamp -->
+  <g transform="translate(430, 40)">
+    <rect width="130" height="28" rx="14" fill="#10B981" fill-opacity="0.15" stroke="#10B981" stroke-width="1.2"/>
+    <text x="65" y="18" text-anchor="middle" fill="#10B981" font-family="system-ui, sans-serif" font-weight="700" font-size="10.5" letter-spacing="0.5">✓ 100% GENUINE</text>
+  </g>
+
+  <!-- Product Illustration -->
+  <g transform="translate(0, 20)">
+    
+        <!-- Speaker Cabinet -->
+        <rect x="220" y="90" width="160" height="320" rx="30" fill="#0F172A" stroke="#F59E0B" stroke-width="4"/>
+        <!-- Handle -->
+        <path d="M260 90 L260 60 A 10 10 0 0 1 270 50 L330 50 A 10 10 0 0 1 340 60 L340 90" fill="none" stroke="#F59E0B" stroke-width="6"/>
+        <!-- Woofer Top -->
+        <circle cx="300" cy="180" r="50" fill="#1E293B" stroke="#F59E0B" stroke-width="4"/>
+        <circle cx="300" cy="180" r="22" fill="#0F172A" stroke="#F59E0B" stroke-width="3"/>
+        <!-- Woofer Bottom -->
+        <circle cx="300" cy="310" r="55" fill="#1E293B" stroke="#F59E0B" stroke-width="4"/>
+        <circle cx="300" cy="310" r="26" fill="#0F172A" stroke="#F59E0B" stroke-width="3"/>
+        <!-- RGB ring effects -->
+        <circle cx="300" cy="310" r="66" fill="none" stroke="#F59E0B" stroke-opacity="0.3" stroke-width="4" stroke-dasharray="10 6"/>
+      
+  </g>
+  
+  <!-- Bottom Product Title and Watermark -->
+  <rect x="40" y="505" width="520" height="60" rx="16" fill="#0B132B" fill-opacity="0.8" stroke="#FFFFFF" stroke-opacity="0.1" stroke-width="1"/>
+  <text x="65" y="541" fill="#FFFFFF" font-family="system-ui, -apple-system, sans-serif" font-weight="700" font-size="18">High-Bass RGB Bluetooth Party Speaker</text>
+  <text x="535" y="541" text-anchor="end" fill="#F59E0B" font-family="system-ui, sans-serif" font-weight="700" font-size="12" letter-spacing="1">TONDEL.LK</text>
+</svg>
