@@ -39,13 +39,15 @@ export function BrandGrid() {
               href={`/brand/${brand.slug}`}
               className="group p-5 rounded-2xl bg-white/[0.03] hover:bg-white/[0.06] border border-white/5 hover:border-blue-500/30 transition-all duration-300 flex flex-col items-center text-center space-y-3"
             >
-              <div className="relative w-16 h-16 rounded-2xl bg-slate-900 border border-white/10 p-2 flex items-center justify-center group-hover:scale-105 transition-transform">
+              <div className="relative w-16 h-16 rounded-2xl bg-slate-900/90 border border-white/10 p-2 flex items-center justify-center group-hover:scale-105 group-hover:border-blue-500/40 transition-all shadow-md">
                 {brand.logo ? (
                   <Image
                     src={brand.logo}
                     alt={brand.name}
-                    fill
-                    className="object-contain p-2"
+                    width={48}
+                    height={48}
+                    className="object-contain max-h-10 max-w-10 filter brightness-105"
+                    unoptimized
                   />
                 ) : (
                   <span className="font-heading font-black text-xl text-blue-400">

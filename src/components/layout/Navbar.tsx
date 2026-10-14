@@ -53,24 +53,15 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Brand Logo with Official Graphic */}
-          <Link href="/" className="flex items-center gap-3 group">
-            <div className="relative w-10 h-10 rounded-xl bg-white/5 border border-white/10 p-1 flex items-center justify-center group-hover:scale-105 transition-transform overflow-hidden shrink-0">
+          <Link href="/" className="flex items-center group py-1.5 focus:outline-none">
+            <div className="relative h-12 w-48 sm:w-56 group-hover:scale-[1.02] transition-transform">
               <Image
                 src="/images/logo.png"
-                alt="TONDEL Official Logo"
-                width={40}
-                height={40}
-                className="object-contain"
+                alt="TONDEL – Smart Choices, Smarter Living"
+                fill
+                className="object-contain object-left"
                 priority
               />
-            </div>
-            <div className="flex flex-col">
-              <span className="text-xl font-black tracking-wider font-heading text-white group-hover:text-blue-400 transition-colors">
-                TONDEL<span className="text-blue-500">.</span>
-              </span>
-              <span className="text-[9px] tracking-widest text-slate-400 uppercase -mt-1 group-hover:text-slate-300 transition-colors hidden sm:inline">
-                Smart Choices, Smarter Living
-              </span>
             </div>
           </Link>
 

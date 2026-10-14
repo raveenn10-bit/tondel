@@ -58,23 +58,14 @@ export function Footer() {
       <div className="max-w-7xl mx-auto py-14 px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
         {/* Brand Column */}
         <div className="lg:col-span-2 space-y-4">
-          <Link href="/" className="flex items-center gap-3">
-            <div className="relative w-12 h-12 rounded-2xl bg-white/5 border border-white/10 p-1 flex items-center justify-center shrink-0">
+          <Link href="/" className="inline-block focus:outline-none">
+            <div className="relative h-14 w-56 sm:w-64">
               <Image
                 src="/images/logo.png"
-                alt="TONDEL Official Logo"
-                width={48}
-                height={48}
-                className="object-contain"
+                alt="TONDEL – Smart Choices, Smarter Living"
+                fill
+                className="object-contain object-left"
               />
-            </div>
-            <div>
-              <span className="text-2xl font-black tracking-wider font-heading text-white">
-                TONDEL<span className="text-blue-500">.</span>
-              </span>
-              <p className="text-[10px] tracking-widest text-slate-400 uppercase">
-                Smart Choices, Smarter Living
-              </p>
             </div>
           </Link>
           <p className="text-sm text-slate-400 leading-relaxed max-w-sm">
