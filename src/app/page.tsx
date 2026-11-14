@@ -6,6 +6,7 @@ import { ProductSection } from "@/components/home/ProductSection";
 import { BusinessBenefits } from "@/components/home/BusinessBenefits";
 import { WhatsAppSupportBanner } from "@/components/home/WhatsAppSupportBanner";
 import { CampaignBanners, PaymentOptions } from "@/components/home/CampaignBanners";
+import { ScrollStory } from "@/components/home/ScrollStory";
 import { getFeaturedProducts, getNewArrivals, getProductsByCategory, getSpecialOffers } from "@/data/products";
 
 export default function HomePage() {
@@ -20,6 +21,7 @@ export default function HomePage() {
       <PaymentOptions />
       <CategoryNav />
       <ProductSection title="Featured deals" subtitle="Popular tech selected for value, performance and everyday use." viewAllLink="/shop" products={getFeaturedProducts()} />
+      <ScrollStory />
       <section className="bg-[#f5f7fb] px-4 py-3 sm:px-7">
         <div className="mx-auto grid max-w-[1384px] gap-4 md:grid-cols-2">
           <Link href="/category/home-appliances" className="group relative min-h-48 overflow-hidden rounded-2xl bg-blue-800 p-7 text-white shadow-lg">
