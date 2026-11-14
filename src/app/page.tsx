@@ -5,6 +5,7 @@ import { CategoryNav } from "@/components/home/CategoryNav";
 import { ProductSection } from "@/components/home/ProductSection";
 import { BusinessBenefits } from "@/components/home/BusinessBenefits";
 import { WhatsAppSupportBanner } from "@/components/home/WhatsAppSupportBanner";
+import { CampaignBanners, PaymentOptions } from "@/components/home/CampaignBanners";
 import { getFeaturedProducts, getNewArrivals, getProductsByCategory, getSpecialOffers } from "@/data/products";
 
 export default function HomePage() {
@@ -12,9 +13,11 @@ export default function HomePage() {
   const wearables = getProductsByCategory("smart-watches");
   const audio = [...getProductsByCategory("audio"), ...getProductsByCategory("speakers"), ...getProductsByCategory("chargers-cables")];
   const appliances = getProductsByCategory("home-appliances");
+  const laptops = getProductsByCategory("laptops");
   return (
     <div className="min-h-screen bg-[#f5f7fb]">
       <HeroSection />
+      <PaymentOptions />
       <CategoryNav />
       <ProductSection title="Featured deals" subtitle="Popular tech selected for value, performance and everyday use." viewAllLink="/shop" products={getFeaturedProducts()} />
       <section className="bg-[#f5f7fb] px-4 py-3 sm:px-7">
@@ -30,6 +33,8 @@ export default function HomePage() {
         </div>
       </section>
       <ProductSection title="New arrivals" subtitle="Fresh devices and new-generation accessories now in the catalogue." viewAllLink="/shop" products={getNewArrivals()} />
+      <CampaignBanners />
+      <ProductSection title="Laptops" subtitle="Mac and Windows notebooks for work, study, creativity and gaming." viewAllLink="/category/laptops" products={laptops} />
       <ProductSection title="Smartphones" subtitle="Apple, Xiaomi and Infinix models with direct product support." viewAllLink="/category/smartphones" products={phones} />
       <ProductSection title="Watches & wearables" subtitle="Connected health, activity and daily convenience." viewAllLink="/category/smart-watches" products={wearables} />
       <ProductSection title="Audio & power essentials" subtitle="Headphones, speakers, fast chargers and durable cables." viewAllLink="/category/audio" products={audio} />

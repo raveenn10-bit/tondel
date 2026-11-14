@@ -975,6 +975,43 @@ export const products: Product[] = [
       keywords: ["Midea blender Sri Lanka", "high speed blender Colombo", "smoothie maker price LKR", "Midea kitchen mixer"],
     },
   },
+  ...[
+    { slug: "apple-macbook-air", name: "Apple MacBook Air", brand: "apple", image: "/images/products/macbook-air-studio.webp", badge: "Mac", description: "A thin and light Mac notebook for everyday productivity, study and creative work." },
+    { slug: "msi-thin-gaming-laptop", name: "MSI Thin Gaming Laptop", brand: "msi", image: "/images/products/msi-gaming-laptop-studio.webp", badge: "Gaming", description: "A performance-focused Windows gaming laptop with a high-refresh visual experience." },
+    { slug: "toshiba-dynabook", name: "Toshiba Dynabook Business Laptop", brand: "toshiba", image: "/images/products/toshiba-dynabook-studio.webp", badge: "Business", description: "A practical Windows business notebook designed for reliable daily productivity." },
+    { slug: "acer-aspire-laptop", name: "Acer Aspire Laptop", brand: "acer", image: "/images/products/acer-aspire-studio.webp", badge: "Everyday", description: "A versatile Windows laptop for work, online learning and home use." },
+    { slug: "hp-15-laptop", name: "HP 15 Laptop", brand: "hp", image: "/images/products/hp-15-laptop-studio.webp", badge: "Popular", description: "A full-size Windows notebook for productivity, study and entertainment." },
+  ].map((laptop, index): Product => ({
+    id: `prod-${laptop.slug}`,
+    slug: laptop.slug,
+    name: laptop.name,
+    brand: laptop.brand,
+    category: "laptops",
+    shortDescription: laptop.description,
+    description: `${laptop.description} Contact TONDEL on WhatsApp to confirm the exact processor, memory, storage, colour, warranty, price and current Sri Lankan availability before ordering.`,
+    specifications: {
+      "Configuration": "Multiple configurations may be available — confirm before ordering",
+      "Operating System": laptop.brand === "apple" ? "macOS" : "Windows (edition varies by configuration)",
+      "Condition": "Confirm stock condition and package contents with TONDEL",
+      "Warranty": "Warranty terms vary by stock source — confirm before payment",
+    },
+    images: [laptop.image],
+    price: null,
+    compareAtPrice: null,
+    currency: "LKR",
+    variants: [{ id: `var-${laptop.slug}`, name: "Configuration to be confirmed", price: null, compareAtPrice: null, sku: `LAP-${index + 1}`, inStock: true }],
+    availability: "Confirm Availability",
+    featured: index < 2,
+    newArrival: true,
+    trending: index < 3,
+    status: "active",
+    badge: laptop.badge,
+    seo: {
+      title: `${laptop.name} Price in Sri Lanka | TONDEL.LK`,
+      description: `Enquire about ${laptop.name} availability and current price in Sri Lanka from TONDEL. Direct WhatsApp support and island-wide delivery.`,
+      keywords: [`${laptop.name} Sri Lanka`, `${laptop.brand} laptop price`, "laptops Galle", "TONDEL laptops"],
+    },
+  })),
 ];
 
 // Helper Functions

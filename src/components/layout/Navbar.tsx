@@ -10,7 +10,7 @@ import { useWishlist } from "@/context/WishlistContext";
 
 const links = [
   ["Brands", "/shop"], ["Today's Offers", "/offers"], ["Smartphones", "/category/smartphones"],
-  ["Smart Watches", "/category/smart-watches"], ["Audio", "/category/audio"], ["Home Appliances", "/category/home-appliances"],
+  ["Laptops", "/category/laptops"], ["Smart Watches", "/category/smart-watches"], ["Audio", "/category/audio"], ["Home Appliances", "/category/home-appliances"],
 ];
 
 export function Navbar() {

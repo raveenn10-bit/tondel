@@ -35,7 +35,7 @@ export function ProductCard({ product, className = "" }: { product: Product; the
         <div className="mt-3 min-h-12">
           {oldPrice && <div className="text-xs text-slate-400 line-through">{oldPrice}</div>}
           <div className="text-lg font-black tracking-tight text-blue-800">{price}</div>
-          {product.price && <div className="text-[10px] font-medium text-slate-500">or 3 easy payments available</div>}
+          {product.price && <div className="text-[10px] font-medium text-slate-500">Payment options confirmed via WhatsApp</div>}
         </div>
         <div className="mt-auto grid grid-cols-[1fr_42px] gap-2 pt-4">
           <button onClick={add} className={`flex h-10 items-center justify-center gap-2 rounded-md text-xs font-extrabold text-white transition ${added ? "bg-emerald-600" : "bg-blue-700 hover:bg-blue-800"}`}>{added ? <><Check className="h-4 w-4" /> Added</> : <><ShoppingCart className="h-4 w-4" /> Add to cart</>}</button>

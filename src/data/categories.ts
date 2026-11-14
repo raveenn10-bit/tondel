@@ -2,6 +2,16 @@ import { Category } from "@/types";
 
 export const categories: Category[] = [
   {
+    id: "cat-laptops",
+    slug: "laptops",
+    name: "Laptops",
+    description: "Mac and Windows laptops for work, study, creativity and gaming.",
+    image: "/images/products/macbook-air-studio.webp",
+    iconName: "Laptop",
+    featured: true,
+    productCount: 5,
+  },
+  {
     id: "cat-smartphones",
     slug: "smartphones",
     name: "Smartphones",
