@@ -21,6 +21,7 @@ const slides = [
   {
     id: "tondel-original",
     image: "/images/banners/tondel-retail-hero.webp",
+    mobileImage: "/images/hero/tondel-original-mobile.webp",
     alt: "TONDEL electronics and lifestyle collection",
     eyebrow: "GENUINE TECH · SMARTER PRICES",
     sinhala: "ඔබේ ජීවිතයට Smart Upgrade එකක්",
@@ -33,6 +34,7 @@ const slides = [
   {
     id: "smart-tech",
     image: "/images/hero/tondel-tech-center.webp",
+    mobileImage: "/images/hero/tondel-tech-mobile.webp",
     alt: "Laptop, smartphone, smartwatch and headphones on a purple studio platform",
     eyebrow: "SMART TECH DEALS",
     sinhala: "හොඳම තාක්ෂණය, හොඳම තේරීම",
@@ -44,6 +46,7 @@ const slides = [
   {
     id: "home-essentials",
     image: "/images/hero/tondel-home-center.webp",
+    mobileImage: "/images/hero/tondel-home-mobile.webp",
     alt: "Modern home appliances arranged on a purple studio platform",
     eyebrow: "ISLAND-WIDE DELIVERY",
     sinhala: "ගෙදරට ගැලපෙන Smart Living",
@@ -152,12 +155,20 @@ export function HeroSection() {
             >
               <div data-product-stage className="absolute inset-0">
                 <Image
+                  src={slide.mobileImage}
+                  alt={slide.alt}
+                  fill
+                  priority={index === 0}
+                  className={`object-cover ${slide.imagePosition} lg:hidden`}
+                  sizes="100vw"
+                />
+                <Image
                   src={slide.image}
                   alt={slide.alt}
                   fill
                   priority={index === 0}
-                  className={`object-cover ${slide.imagePosition}`}
-                  sizes="100vw"
+                  className={`hidden object-cover ${slide.imagePosition} lg:block`}
+                  sizes="(min-width: 1024px) 100vw, 1px"
                 />
               </div>
 
