@@ -83,7 +83,11 @@ export function HeroSection() {
 
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const context = gsap.context(() => {
-      gsap.to(track, {
+      const panels = Array.from(track.children) as HTMLElement[];
+
+      // Move each viewport-sized panel instead of translating the flex track.
+      // This avoids Safari calculating xPercent from the full overflowing track.
+      gsap.to(panels, {
         xPercent: -active * 100,
         duration: reducedMotion ? 0 : 0.95,
         ease: "power3.inOut",
@@ -95,9 +99,8 @@ export function HeroSection() {
 
       gsap.fromTo(
         currentSlide.querySelectorAll("[data-hero-reveal]"),
-        { autoAlpha: 0, y: 24 },
+        { y: reducedMotion ? 0 : 24 },
         {
-          autoAlpha: 1,
           y: 0,
           duration: reducedMotion ? 0 : 0.7,
           stagger: reducedMotion ? 0 : 0.09,
@@ -109,10 +112,9 @@ export function HeroSection() {
 
       gsap.fromTo(
         currentSlide.querySelector("[data-product-stage]"),
-        { scale: reducedMotion ? 1 : 1.055, autoAlpha: 0.85 },
+        { scale: reducedMotion ? 1 : 1.055 },
         {
           scale: 1,
-          autoAlpha: 1,
           duration: reducedMotion ? 0 : 1.25,
           ease: "power2.out",
           overwrite: true,
@@ -146,12 +148,12 @@ export function HeroSection() {
       }}
     >
       <div className="overflow-hidden">
-        <div ref={trackRef} className="flex will-change-transform">
+        <div ref={trackRef} className="flex w-full">
           {slides.map((slide, index) => (
             <article
               key={slide.id}
               aria-hidden={active !== index}
-              className="relative min-h-[580px] w-full shrink-0 overflow-hidden sm:min-h-[610px] lg:min-h-[520px]"
+              className="hero-slide relative min-h-[580px] w-full shrink-0 will-change-transform overflow-hidden sm:min-h-[610px] lg:min-h-[520px]"
             >
               <div data-product-stage className="absolute inset-0">
                 <Image
