@@ -1,200 +1,50 @@
 "use client";
 
-import React, { useState } from "react";
-import Link from "next/link";
+import { useState } from "react";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { ChevronDown, Heart, Menu, Search, ShoppingCart, X } from "lucide-react";
 import { useCart } from "@/context/CartContext";
 import { useWishlist } from "@/context/WishlistContext";
-import { siteConfig } from "@/data/site-config";
-import { 
-  ShoppingBag, 
-  Heart, 
-  Search, 
-  Menu, 
-  X, 
-  Phone, 
-  Smartphone, 
-  Watch, 
-  Headphones, 
-  Home, 
-  Tag, 
-  ArrowRight 
-} from "lucide-react";
+
+const links = [
+  ["Brands", "/shop"], ["Today's Offers", "/offers"], ["Smartphones", "/category/smartphones"],
+  ["Smart Watches", "/category/smart-watches"], ["Audio", "/category/audio"], ["Home Appliances", "/category/home-appliances"],
+];
 
 export function Navbar() {
-  const pathname = usePathname();
-  const { totalCount: cartCount, setIsCartDrawerOpen } = useCart();
+  const router = useRouter();
+  const { totalCount, setIsCartDrawerOpen } = useCart();
   const { totalCount: wishlistCount } = useWishlist();
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [searchOpen, setSearchOpen] = useState(false);
-  const [searchQuery, setSearchQuery] = useState("");
-
-  const navLinks = [
-    { label: "Home", href: "/" },
-    { label: "Shop", href: "/shop" },
-    { label: "Smartphones", href: "/category/smartphones", icon: Smartphone },
-    { label: "Smart Watches", href: "/category/smart-watches", icon: Watch },
-    { label: "Audio", href: "/category/audio", icon: Headphones },
-    { label: "Appliances", href: "/category/home-appliances", icon: Home },
-    { label: "Offers", href: "/offers", icon: Tag, highlight: true },
-  ];
-
-  const handleSearchSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (searchQuery.trim()) {
-      window.location.href = `/search?q=${encodeURIComponent(searchQuery.trim())}`;
-      setSearchOpen(false);
-    }
+  const [query, setQuery] = useState("");
+  const [open, setOpen] = useState(false);
+  const submit = (event: React.FormEvent) => {
+    event.preventDefault();
+    if (query.trim()) router.push(`/search?q=${encodeURIComponent(query.trim())}`);
   };
 
   return (
-    <header className="sticky top-0 z-40 w-full bg-tondel-navy/90 backdrop-blur-md border-b border-white/10 transition-all duration-300">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
-          {/* Brand Logo with Official Graphic */}
-          <Link href="/" className="flex items-center group py-1.5 focus:outline-none">
-            <div className="relative h-12 w-48 sm:w-56 group-hover:scale-[1.02] transition-transform">
-              <Image
-                src="/images/logo.png"
-                alt="TONDEL – Smart Choices, Smarter Living"
-                fill
-                className="object-contain object-left"
-                priority
-              />
-            </div>
-          </Link>
-
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-1 xl:gap-2">
-            {navLinks.map((link) => {
-              const isActive = pathname === link.href;
-              return (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className={`px-3 py-1.5 rounded-full text-sm font-medium transition-all ${
-                    isActive
-                      ? "bg-blue-600/20 text-blue-400 border border-blue-500/30"
-                      : link.highlight
-                      ? "text-amber-400 hover:text-amber-300 hover:bg-amber-400/10"
-                      : "text-slate-300 hover:text-white hover:bg-white/5"
-                  }`}
-                >
-                  {link.label}
-                </Link>
-              );
-            })}
-          </nav>
-
-          {/* Actions & Utilities */}
-          <div className="flex items-center gap-3">
-            {/* Search Trigger */}
-            <button
-              onClick={() => setSearchOpen(!searchOpen)}
-              className="p-2.5 rounded-full text-slate-300 hover:text-white hover:bg-white/5 transition-colors"
-              aria-label="Search catalogue"
-            >
-              <Search className="w-5 h-5" />
-            </button>
-
-            {/* Wishlist Icon */}
-            <Link
-              href="/wishlist"
-              className="relative p-2.5 rounded-full text-slate-300 hover:text-white hover:bg-white/5 transition-colors"
-              aria-label="Wishlist"
-            >
-              <Heart className="w-5 h-5" />
-              {wishlistCount > 0 && (
-                <span className="absolute top-1.5 right-1.5 bg-rose-500 text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center animate-pulse">
-                  {wishlistCount}
-                </span>
-              )}
-            </Link>
-
-            {/* Cart Trigger */}
-            <button
-              onClick={() => setIsCartDrawerOpen(true)}
-              className="relative flex items-center gap-2 px-3 py-2 rounded-full bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium transition-all shadow-md shadow-blue-600/20"
-              aria-label="Open Shopping Cart"
-            >
-              <ShoppingBag className="w-4 h-4" />
-              <span className="hidden sm:inline">Cart</span>
-              {cartCount > 0 && (
-                <span className="bg-white text-blue-600 text-xs font-bold px-1.5 py-0.5 rounded-full">
-                  {cartCount}
-                </span>
-              )}
-            </button>
-
-            {/* Mobile Menu Button */}
-            <button
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden p-2 rounded-lg text-slate-300 hover:text-white hover:bg-white/5"
-              aria-label="Toggle menu"
-            >
-              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
-          </div>
+    <header className="sticky top-0 z-50 bg-white shadow-[0_2px_14px_rgba(15,23,42,.08)]">
+      <div className="mx-auto flex h-[74px] max-w-[1440px] items-center gap-4 px-4 sm:px-7">
+        <Link href="/" className="relative h-11 w-36 shrink-0 sm:w-44"><Image src="/images/logo-horizontal.png" alt="TONDEL" fill priority className="object-contain object-left" /></Link>
+        <form onSubmit={submit} className="relative hidden flex-1 md:block">
+          <input value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Search for products, categories and more" className="h-11 w-full rounded-lg border border-slate-300 bg-slate-50 pl-4 pr-12 text-sm text-slate-900 outline-none transition focus:border-blue-600 focus:bg-white focus:ring-2 focus:ring-blue-100" />
+          <button aria-label="Search" className="absolute right-0 top-0 grid h-11 w-12 place-items-center rounded-r-lg bg-blue-700 text-white hover:bg-blue-800"><Search className="h-5 w-5" /></button>
+        </form>
+        <div className="ml-auto flex items-center gap-1 sm:gap-2">
+          <Link href="/wishlist" className="relative grid h-10 w-10 place-items-center rounded-lg text-slate-700 hover:bg-slate-100" aria-label="Wishlist"><Heart className="h-5 w-5" />{wishlistCount > 0 && <b className="absolute right-0 top-0 grid h-4 min-w-4 place-items-center rounded-full bg-rose-600 px-1 text-[9px] text-white">{wishlistCount}</b>}</Link>
+          <button onClick={() => setIsCartDrawerOpen(true)} className="relative flex h-10 items-center gap-2 rounded-lg px-2 text-sm font-bold text-slate-800 hover:bg-slate-100"><ShoppingCart className="h-5 w-5" /><span className="hidden sm:inline">Cart</span>{totalCount > 0 && <b className="grid h-5 min-w-5 place-items-center rounded-full bg-blue-700 px-1 text-[10px] text-white">{totalCount}</b>}</button>
+          <button onClick={() => setOpen(!open)} className="grid h-10 w-10 place-items-center rounded-lg text-slate-800 lg:hidden" aria-label="Menu">{open ? <X /> : <Menu />}</button>
         </div>
-
-        {/* Expandable Search Bar */}
-        {searchOpen && (
-          <div className="py-3 border-t border-white/10 animate-fadeIn">
-            <form onSubmit={handleSearchSubmit} className="relative flex items-center">
-              <input
-                type="text"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Search smartphones, smart watches, audio, appliances..."
-                className="w-full bg-slate-900/90 border border-blue-500/40 rounded-xl px-4 py-3 pl-11 text-sm text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                autoFocus
-              />
-              <Search className="w-5 h-5 text-slate-400 absolute left-3.5" />
-              <button
-                type="submit"
-                className="absolute right-2 px-3 py-1.5 bg-blue-600 text-white rounded-lg text-xs font-medium hover:bg-blue-500"
-              >
-                Search
-              </button>
-            </form>
-          </div>
-        )}
       </div>
-
-      {/* Mobile Drawer Navigation */}
-      {mobileMenuOpen && (
-        <div className="lg:hidden bg-tondel-navy border-b border-white/10 px-4 pt-2 pb-6 space-y-3">
-          <nav className="flex flex-col space-y-1">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={() => setMobileMenuOpen(false)}
-                className="flex items-center justify-between px-3 py-2.5 rounded-lg text-base font-medium text-slate-200 hover:bg-white/5 hover:text-white"
-              >
-                <div className="flex items-center gap-3">
-                  {link.icon && <link.icon className="w-5 h-5 text-blue-400" />}
-                  <span>{link.label}</span>
-                </div>
-                <ArrowRight className="w-4 h-4 text-slate-500" />
-              </Link>
-            ))}
-          </nav>
-
-          <div className="pt-4 border-t border-white/10 flex flex-col gap-2">
-            <a
-              href={`https://wa.me/${siteConfig.whatsappNumber}?text=${encodeURIComponent("Hello TONDEL! I would like to make an enquiry.")}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 py-3 rounded-xl bg-emerald-600 text-white font-medium text-sm hover:bg-emerald-500 transition-colors"
-            >
-              <Phone className="w-4 h-4" />
-              WhatsApp: {siteConfig.displayPhone}
-            </a>
-          </div>
+      <div className="border-t border-blue-800 bg-blue-800 text-white">
+        <div className="mx-auto hidden h-11 max-w-[1440px] items-center px-7 lg:flex">
+          <Link href="/shop" className="mr-8 flex h-full items-center gap-2 border-r border-white/20 pr-8 text-sm font-extrabold"><Menu className="h-4 w-4" /> All Categories <ChevronDown className="h-4 w-4" /></Link>
+          <nav className="flex items-center gap-7">{links.map(([label, href]) => <Link key={label} href={href} className="text-[13px] font-semibold text-blue-50 hover:text-white">{label}</Link>)}</nav>
         </div>
-      )}
+      </div>
+      {open && <div className="border-t bg-white px-4 pb-5 lg:hidden"><form onSubmit={submit} className="relative my-4"><input value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Search products" className="h-11 w-full rounded-lg border border-slate-300 pl-4 pr-11 text-sm text-slate-900" /><button className="absolute right-0 top-0 grid h-11 w-11 place-items-center text-blue-700"><Search className="h-5 w-5" /></button></form><nav className="grid gap-1">{links.map(([label, href]) => <Link onClick={() => setOpen(false)} key={label} href={href} className="rounded-lg px-3 py-3 text-sm font-bold text-slate-800 hover:bg-slate-100">{label}</Link>)}</nav></div>}
     </header>
   );
 }

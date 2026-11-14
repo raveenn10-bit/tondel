@@ -1,61 +1,15 @@
-"use client";
-
-import React from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { categories } from "@/data/categories";
-import { ScrollReveal } from "@/components/ui/ScrollReveal";
-import { 
-  Smartphone, 
-  Watch, 
-  Headphones, 
-  Speaker, 
-  Zap, 
-  Mouse, 
-  Home, 
-  Sparkles,
-  Flame
-} from "lucide-react";
-
-const iconMap: Record<string, React.ElementType> = {
-  Smartphone,
-  Watch,
-  Headphones,
-  Speaker,
-  Zap,
-  Mouse,
-  Home,
-  Sparkles,
-  Flame,
-};
 
 export function CategoryNav() {
   return (
-    <section id="categories-section" className="py-8 bg-tondel-navySurface/80 border-y border-white/5 px-4 sm:px-6 lg:px-8 relative z-20">
-      <div className="max-w-7xl mx-auto">
-        <ScrollReveal animation="fade-up" duration={600}>
-          <div className="flex items-center gap-3 overflow-x-auto pb-2 scrollbar-none sm:justify-center">
-            {categories.map((cat, idx) => {
-              const Icon = (cat.iconName && iconMap[cat.iconName]) || Sparkles;
-              const isOffer = cat.slug === "offers";
-
-              return (
-                <Link
-                  key={cat.id}
-                  href={isOffer ? "/offers" : `/category/${cat.slug}`}
-                  style={{ transitionDelay: `${idx * 40}ms` }}
-                  className={`group flex items-center gap-2.5 px-4 py-2.5 rounded-full text-xs font-semibold whitespace-nowrap transition-all duration-300 shrink-0 hover:scale-105 active:scale-95 ${
-                    isOffer
-                      ? "bg-amber-500/15 text-amber-300 border border-amber-500/40 hover:bg-amber-500/25 hover:shadow-[0_0_20px_rgba(245,158,11,0.25)]"
-                      : "bg-white/[0.04] text-slate-300 hover:text-white border border-white/10 hover:border-cyan-400/50 hover:bg-cyan-500/10 hover:shadow-[0_0_20px_rgba(6,182,212,0.2)]"
-                  }`}
-                >
-                  <Icon className={`w-4 h-4 transition-transform duration-300 group-hover:scale-110 ${isOffer ? "text-amber-400 animate-pulse" : "text-cyan-400"}`} />
-                  <span>{cat.name}</span>
-                </Link>
-              );
-            })}
-          </div>
-        </ScrollReveal>
+    <section className="bg-white px-4 py-7 sm:px-7">
+      <div className="mx-auto max-w-[1384px]">
+        <div className="mb-5 flex items-end justify-between"><div><p className="text-[11px] font-black uppercase tracking-[.16em] text-blue-700">Browse faster</p><h2 className="mt-1 text-xl font-black text-slate-950 sm:text-2xl">Shop by category</h2></div><Link href="/shop" className="text-xs font-extrabold uppercase text-blue-700">View all</Link></div>
+        <div className="flex gap-4 overflow-x-auto pb-2 scrollbar-none sm:grid sm:grid-cols-4 lg:grid-cols-8">
+          {categories.map((category, index) => <Link style={{ animationDelay: `${index * 70}ms` }} key={category.id} href={category.slug === "offers" ? "/offers" : `/category/${category.slug}`} className="category-pop group w-24 shrink-0 text-center sm:w-auto"><div className="relative mx-auto aspect-square w-20 overflow-hidden rounded-full border border-slate-200 bg-slate-50 transition duration-300 group-hover:-translate-y-1.5 group-hover:scale-105 group-hover:border-blue-400 group-hover:shadow-lg"><Image src={category.image} alt={category.name} fill className="object-cover transition duration-500 group-hover:scale-110" sizes="96px" /></div><span className="mt-2 block text-[11px] font-bold leading-4 text-slate-700 group-hover:text-blue-700">{category.name}</span></Link>)}
+        </div>
       </div>
     </section>
   );

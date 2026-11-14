@@ -70,7 +70,7 @@ export default function RootLayout({
       lang="en"
       className={`${manrope.variable} ${plusJakarta.variable} ${inter.variable}`}
     >
-      <body className="bg-tondel-navy text-white min-h-screen flex flex-col font-sans selection:bg-blue-600 selection:text-white">
+      <body className="bg-[#f5f7fb] text-slate-900 min-h-screen flex flex-col font-sans selection:bg-blue-600 selection:text-white">
         <CartProvider>
           <WishlistProvider>
             <AnnouncementBar />
