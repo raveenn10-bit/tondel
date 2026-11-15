@@ -9,7 +9,7 @@ import { useCart } from "@/context/CartContext";
 import { useWishlist } from "@/context/WishlistContext";
 
 const links = [
-  ["Brands", "/shop"], ["Today's Offers", "/offers"], ["Smartphones", "/category/smartphones"],
+  ["Full Catalogue", "/catalogue"], ["Brands", "/shop"], ["Today's Offers", "/offers"], ["Smartphones", "/category/smartphones"],
   ["Laptops", "/category/laptops"], ["Smart Watches", "/category/smart-watches"], ["Audio", "/category/audio"], ["Home Appliances", "/category/home-appliances"],
 ];
 

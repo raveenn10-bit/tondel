@@ -4,7 +4,7 @@ import { Clock3, Facebook, Instagram, Mail, MapPin, MessageCircle, ShieldCheck, 
 import { siteConfig } from "@/data/site-config";
 
 const columns = [
-  { title: "Shop", links: [["Smartphones", "/category/smartphones"], ["Smart Watches", "/category/smart-watches"], ["Audio & Speakers", "/category/audio"], ["Chargers & Cables", "/category/chargers-cables"], ["Home Appliances", "/category/home-appliances"], ["Special Offers", "/offers"]] },
+  { title: "Shop", links: [["Full Catalogue", "/catalogue"], ["Smartphones", "/category/smartphones"], ["Smart Watches", "/category/smart-watches"], ["Audio & Speakers", "/category/audio"], ["Home Appliances", "/category/home-appliances"], ["Special Offers", "/offers"]] },
   { title: "Customer Care", links: [["Contact Us", "/contact"], ["Frequently Asked Questions", "/faq"], ["Shipping & Delivery", "/shipping"], ["Returns & Warranty", "/returns"], ["Track via WhatsApp", `https://wa.me/${siteConfig.whatsappNumber}`]] },
   { title: "About", links: [["About TONDEL", "/about"], ["Privacy Policy", "/privacy"], ["Terms & Conditions", "/terms"], ["Wishlist", "/wishlist"], ["My Cart", "/cart"]] },
 ];
