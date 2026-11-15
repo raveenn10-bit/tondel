@@ -42,8 +42,8 @@ function BrandTile({ name }: { name: string }) {
   const colour = brandColours[name] ?? "#2449A4";
   const domain = brandDomains[name];
   return (
-    <div className="flex h-[72px] w-[148px] shrink-0 items-center gap-3 rounded-2xl border bg-white px-4 shadow-[0_8px_24px_rgba(15,23,42,.06)]" style={{ borderColor: `${colour}2e` }}>
-      <span className="grid h-11 w-11 shrink-0 place-items-center overflow-hidden rounded-xl bg-slate-50 p-1.5 ring-1 ring-slate-100">
+    <div className="flex h-[86px] w-[190px] shrink-0 items-center gap-4 rounded-[22px] border border-[#dce5fb] bg-white px-[18px] shadow-[0_8px_22px_rgba(37,99,235,.045)] transition duration-300 hover:-translate-y-0.5 hover:border-blue-300 hover:shadow-[0_12px_28px_rgba(37,99,235,.10)]">
+      <span className="grid h-14 w-14 shrink-0 place-items-center overflow-hidden rounded-[16px] border border-slate-100 bg-[#f8faff] p-2 shadow-[0_4px_12px_rgba(15,23,42,.04)]">
         <img
           src={`https://icons.duckduckgo.com/ip3/${domain}.ico`}
           alt={`${name} official logo`}
@@ -55,7 +55,7 @@ function BrandTile({ name }: { name: string }) {
           className="h-full w-full object-contain"
         />
       </span>
-      <span className="min-w-0 text-[12px] font-black leading-4" style={{ color: colour }}>{name}</span>
+      <span className="min-w-0 text-[13px] font-black leading-4" style={{ color: colour }}>{name}</span>
     </div>
   );
 }
