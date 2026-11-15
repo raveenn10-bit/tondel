@@ -1,19 +1,27 @@
-import Image from "next/image";
 import { BadgeCheck } from "lucide-react";
 import { catalogueDepartments } from "@/data/catalogue";
 
 const brandNames = Array.from(new Set(catalogueDepartments.flatMap((department) => department.brands)));
-const middle = Math.ceil(brandNames.length / 2);
 
-const localLogos: Record<string, string> = {
-  Apple: "/images/brands/apple.svg",
-  Samsung: "/images/brands/samsung.svg",
-  Xiaomi: "/images/brands/xiaomi-redmi.svg",
-  Redmi: "/images/brands/xiaomi-redmi.svg",
-  Infinix: "/images/brands/infinix.svg",
-  Sony: "/images/brands/sony.svg",
-  Anker: "/images/brands/anker.svg",
-  Baseus: "/images/brands/baseus.svg",
+// Official website domains are used to load each brand's original coloured icon.
+// Keeping this mapping explicit prevents guessed or AI-generated brand marks.
+const brandDomains: Record<string, string> = {
+  Apple: "apple.com", Samsung: "samsung.com", Xiaomi: "xiaomi.com", Redmi: "mi.com", POCO: "po.co",
+  vivo: "vivo.com", OPPO: "oppo.com", OnePlus: "oneplus.com", HONOR: "honor.com", Huawei: "huawei.com",
+  realme: "realme.com", Infinix: "infinixmobility.com", TECNO: "tecno-mobile.com", ASUS: "asus.com",
+  HP: "hp.com", Dell: "dell.com", Lenovo: "lenovo.com", Acer: "acer.com", MSI: "msi.com",
+  Amazfit: "amazfit.com", Epson: "epson.com", Canon: "canon.com", Brother: "brother.com",
+  Pantum: "global.pantum.com", Fujifilm: "fujifilm.com", Kyocera: "kyocera.com", Ricoh: "ricoh.com",
+  Xerox: "xerox.com", "Konica Minolta": "konicaminolta.com", Toshiba: "global.toshiba", "G&G": "ggimage.com",
+  Hikvision: "hikvision.com", Dahua: "dahuasecurity.com", Uniview: "global.uniview.com", Tiandy: "tiandy.com",
+  EZVIZ: "ezviz.com", IMOU: "imoulife.com", Reolink: "reolink.com", "TP-Link Tapo": "tapo.com",
+  DJI: "dji.com", Insta360: "insta360.com", GoPro: "gopro.com", Intel: "intel.com", AMD: "amd.com",
+  NVIDIA: "nvidia.com", Gigabyte: "gigabyte.com", Kingston: "kingston.com", Crucial: "crucial.com",
+  UGREEN: "ugreen.com", Baseus: "baseus.com", Anker: "anker.com", Orico: "orico.cc", "TP-Link": "tp-link.com",
+  Ruijie: "ruijienetworks.com", ZTE: "zte.com.cn", Tenda: "tendacn.com", Mercusys: "mercusys.com",
+  Ubiquiti: "ui.com", JBL: "jbl.com", Edifier: "edifier.com", Soundcore: "soundcore.com", Aqara: "aqara.com",
+  Roborock: "global.roborock.com", Dreame: "global.dreametech.com", "DJI Power": "dji.com", Zebra: "zebra.com",
+  Honeywell: "honeywell.com", Sunmi: "sunmi.com",
 };
 
 const brandColours: Record<string, string> = {
@@ -32,26 +40,31 @@ const brandColours: Record<string, string> = {
 
 function BrandTile({ name }: { name: string }) {
   const colour = brandColours[name] ?? "#2449A4";
-  const logo = localLogos[name];
+  const domain = brandDomains[name];
   return (
-    <div className="flex h-20 w-[154px] shrink-0 items-center justify-center rounded-2xl border bg-white px-4 shadow-[0_8px_24px_rgba(15,23,42,.06)]" style={{ borderColor: `${colour}33` }}>
-      {logo ? (
-        <Image src={logo} alt={`${name} official brand`} width={112} height={48} className="h-11 w-full object-contain" unoptimized />
-      ) : (
-        <div className="flex w-full items-center gap-2.5">
-          <span className="grid h-9 w-9 shrink-0 place-items-center rounded-xl text-[11px] font-black" style={{ backgroundColor: `${colour}16`, color: colour }}>{name.replace(/[^A-Za-z0-9]/g, "").slice(0, 2).toUpperCase()}</span>
-          <span className="text-[12px] font-black leading-4" style={{ color: colour }}>{name}</span>
-        </div>
-      )}
+    <div className="flex h-[72px] w-[148px] shrink-0 items-center gap-3 rounded-2xl border bg-white px-4 shadow-[0_8px_24px_rgba(15,23,42,.06)]" style={{ borderColor: `${colour}2e` }}>
+      <span className="grid h-11 w-11 shrink-0 place-items-center overflow-hidden rounded-xl bg-slate-50 p-1.5 ring-1 ring-slate-100">
+        <img
+          src={`https://icons.duckduckgo.com/ip3/${domain}.ico`}
+          alt={`${name} official logo`}
+          width="44"
+          height="44"
+          loading="lazy"
+          decoding="async"
+          referrerPolicy="no-referrer"
+          className="h-full w-full object-contain"
+        />
+      </span>
+      <span className="min-w-0 text-[12px] font-black leading-4" style={{ color: colour }}>{name}</span>
     </div>
   );
 }
 
-function BrandRow({ names, reverse = false }: { names: string[]; reverse?: boolean }) {
+function BrandRow({ names }: { names: string[] }) {
   const doubled = [...names, ...names];
   return (
     <div className="overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_6%,black_94%,transparent)]">
-      <div className={`brand-marquee-track flex w-max gap-3 py-1 ${reverse ? "brand-marquee-reverse" : ""}`}>
+      <div className="brand-marquee-track flex w-max gap-3 py-1">
         {doubled.map((name, index) => <BrandTile key={`${name}-${index}`} name={name} />)}
       </div>
     </div>
@@ -66,7 +79,7 @@ export function OfficialBrandsMarquee() {
           <div><span className="inline-flex items-center gap-1.5 rounded-full bg-blue-50 px-3 py-1 text-[10px] font-black uppercase tracking-[.16em] text-blue-700"><BadgeCheck className="h-3.5 w-3.5" /> Official Brands</span><h2 className="mt-3 text-2xl font-black tracking-[-.03em] text-slate-950 sm:text-3xl">Global brands. One trusted supplier.</h2><p className="mt-2 max-w-2xl text-xs leading-5 text-slate-500">Mobile, computing, security, imaging, networking, audio, smart-home and wholesale technology brands available through TONDEL.</p></div>
           <p className="text-xs font-extrabold text-blue-700">{brandNames.length} brands in the catalogue</p>
         </div>
-        <div className="space-y-3"><BrandRow names={brandNames.slice(0, middle)} /><BrandRow names={brandNames.slice(middle)} reverse /></div>
+        <BrandRow names={brandNames} />
       </div>
     </section>
   );
