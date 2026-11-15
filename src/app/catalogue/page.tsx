@@ -29,9 +29,10 @@ export default function CataloguePage() {
       <section className="relative overflow-hidden bg-[#0b1735] px-4 py-14 text-white sm:px-7 lg:py-20">
         <div className="absolute inset-0 opacity-70 [background:radial-gradient(circle_at_18%_10%,rgba(37,99,235,.42),transparent_34%),radial-gradient(circle_at_86%_80%,rgba(124,58,237,.28),transparent_34%)]" />
         <div className="relative mx-auto max-w-[1384px]">
-          <span className="inline-flex rounded-full border border-blue-300/30 bg-blue-500/15 px-3 py-1 text-[10px] font-black uppercase tracking-[.2em] text-blue-100">Complete product range</span>
-          <h1 className="mt-4 max-w-4xl font-heading text-4xl font-black tracking-[-.04em] sm:text-5xl lg:text-6xl">Everything tech, organized in one catalogue.</h1>
-          <p className="mt-4 max-w-2xl text-sm leading-7 text-slate-300 sm:text-base">Explore {catalogueDepartments.length} departments and {catalogueSeriesCount}+ product series. Availability, model, warranty and current price are confirmed directly with TONDEL.</p>
+          <span className="inline-flex rounded-full border border-blue-300/30 bg-blue-500/15 px-3 py-1 text-[10px] font-black uppercase tracking-[.2em] text-blue-100">China to Sri Lanka · Bulk Wholesale</span>
+          <h1 className="mt-4 max-w-4xl font-heading text-4xl font-black tracking-[-.04em] sm:text-5xl lg:text-6xl">China to Sri Lanka wholesale technology supply.</h1>
+          <p className="mt-4 max-w-3xl text-sm leading-7 text-slate-300 sm:text-base">TONDEL handles large-volume wholesale orders, reseller supply and project quotations across {catalogueDepartments.length} departments and {catalogueSeriesCount}+ product series. Contact us for bulk pricing, sourcing and delivery details.</p>
+          <div className="mt-5 flex flex-wrap gap-2 text-[10px] font-extrabold uppercase tracking-wider text-blue-100"><span className="rounded-full border border-white/15 bg-white/10 px-3 py-2">Bulk orders</span><span className="rounded-full border border-white/15 bg-white/10 px-3 py-2">Reseller supply</span><span className="rounded-full border border-white/15 bg-white/10 px-3 py-2">Project quotations</span><span className="rounded-full border border-white/15 bg-white/10 px-3 py-2">China sourcing</span></div>
           <div className="relative mt-8 max-w-2xl">
             <Search className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-slate-400" />
             <input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Search iPhone, MacBook, CCTV, printer, DJI, POS..." className="h-14 w-full rounded-2xl border border-white/15 bg-white px-12 pr-12 text-sm font-semibold text-slate-950 outline-none ring-blue-400 transition focus:ring-4" />
