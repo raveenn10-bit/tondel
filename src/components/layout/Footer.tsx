@@ -53,17 +53,17 @@ export function Footer() {
             {columns.map((column, index) => <div key={column.title} className={index === 2 ? "col-span-2 sm:col-span-1" : ""}><h3 className="mb-4 text-sm font-extrabold text-white">{column.title}</h3><ul className={index === 2 ? "grid grid-cols-2 gap-x-5 gap-y-3 sm:block sm:space-y-3" : "space-y-3"}>{column.links.map(([label, href]) => <li key={label}><Link href={href} className="inline-block text-xs leading-5 text-rose-100/75 transition hover:translate-x-1 hover:text-white">{label}</Link></li>)}</ul></div>)}
           </div>
         </div>
-        <div className="mx-auto mt-10 max-w-[1384px] border-t border-white/10 pt-6">
-          <h3 className="mb-4 text-xs font-black uppercase tracking-[.16em] text-rose-100/85">Payment &amp; ordering options</h3>
-          <div className="rounded-2xl border border-white/10 bg-black/10 p-3 sm:p-4">
-            <div role="region" aria-label="Card and digital payment methods" className="grid grid-cols-3 gap-2.5 sm:grid-cols-5 lg:grid-cols-7">
+        <div className="mx-auto mt-8 max-w-[1384px] border-t border-white/10 pt-5">
+          <h3 className="mb-3 text-[10px] font-black uppercase tracking-[.16em] text-rose-100/85">Payment &amp; ordering options</h3>
+          <div className="rounded-xl border border-white/10 bg-black/10 p-2.5">
+            <div role="region" aria-label="Card and digital payment methods" className="scrollbar-none flex gap-2 overflow-x-auto pb-1">
               {paymentMethods.map(([name, src]) => (
-                <div key={name} className="flex min-h-16 items-center justify-center rounded-xl border border-white/10 bg-transparent px-2 py-2" title={name}>
-                  <Image src={src} alt={`${name} payment`} width={180} height={90} className="h-11 w-full object-contain" sizes="(max-width: 640px) 28vw, 150px" />
+                <div key={name} className="flex h-12 w-[76px] shrink-0 items-center justify-center rounded-lg border border-white/10 bg-transparent px-2 py-1.5 sm:w-[86px] lg:min-w-0 lg:flex-1" title={name}>
+                  <Image src={src} alt={`${name} payment`} width={150} height={70} className="h-8 w-full object-contain" sizes="(max-width: 640px) 76px, 100px" />
                 </div>
               ))}
             </div>
-            <p className="mt-3 px-1 text-[11px] leading-5 text-rose-100/70 sm:text-xs">Card and digital wallet availability is confirmed with TONDEL before payment. Order via WhatsApp, bank transfer, or cash on delivery where available.</p>
+            <p className="mt-2 px-1 text-[10px] leading-4 text-rose-100/70">Payment availability is confirmed with TONDEL. Order via WhatsApp, bank transfer, or cash on delivery where available.</p>
           </div>
           <div className="mt-6 flex flex-col gap-4 border-t border-white/10 pt-6 text-[11px] text-rose-100/65 sm:flex-row sm:items-center sm:justify-between"><p>© {new Date().getFullYear()} TONDEL. All rights reserved.</p><p>Smart Choices, Smarter Living · Galle, Sri Lanka</p></div>
         </div>
