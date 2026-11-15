@@ -83,17 +83,6 @@ export function HeroSection() {
 
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const context = gsap.context(() => {
-      const panels = Array.from(track.children) as HTMLElement[];
-
-      // Move each viewport-sized panel instead of translating the flex track.
-      // This avoids Safari calculating xPercent from the full overflowing track.
-      gsap.to(panels, {
-        xPercent: -active * 100,
-        duration: reducedMotion ? 0 : 0.95,
-        ease: "power3.inOut",
-        overwrite: true,
-      });
-
       const currentSlide = track.children[active] as HTMLElement | undefined;
       if (!currentSlide) return;
 
@@ -148,19 +137,23 @@ export function HeroSection() {
       }}
     >
       <div className="overflow-hidden">
-        <div ref={trackRef} className="flex w-full">
+        <div
+          ref={trackRef}
+          className="flex w-full transform-gpu will-change-transform transition-transform duration-[950ms] ease-[cubic-bezier(.22,1,.36,1)] motion-reduce:transition-none"
+          style={{ transform: `translate3d(-${active * 100}%, 0, 0)` }}
+        >
           {slides.map((slide, index) => (
             <article
               key={slide.id}
               aria-hidden={active !== index}
-              className="hero-slide relative min-h-[580px] w-full shrink-0 will-change-transform overflow-hidden sm:min-h-[610px] lg:min-h-[520px]"
+              className="hero-slide relative min-h-[580px] w-full shrink-0 overflow-hidden sm:min-h-[610px] lg:min-h-[520px]"
             >
               <div data-product-stage className="absolute inset-0">
                 <Image
                   src={slide.mobileImage}
                   alt={slide.alt}
                   fill
-                  priority={index === 0}
+                  priority
                   className={`object-cover ${slide.imagePosition} lg:hidden`}
                   sizes="100vw"
                 />
