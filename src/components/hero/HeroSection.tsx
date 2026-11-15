@@ -9,9 +9,9 @@ import {
   BadgeCheck,
   ChevronLeft,
   ChevronRight,
-  MessageCircle,
   Truck,
 } from "lucide-react";
+import { WhatsAppIcon } from "@/components/ui/WhatsAppIcon";
 import gsap from "gsap";
 import { siteConfig } from "@/data/site-config";
 
@@ -216,7 +216,7 @@ export function HeroSection() {
                       tabIndex={active === index ? 0 : -1}
                       className="inline-flex min-h-11 items-center gap-2 rounded-xl border border-white/25 bg-black/25 px-4 text-sm font-extrabold text-white backdrop-blur-md transition hover:bg-white/15"
                     >
-                      <MessageCircle className="h-4 w-4 text-emerald-300" /> WhatsApp
+                      <WhatsAppIcon className="h-4 w-4 text-emerald-300" /> WhatsApp
                     </a>
                   </div>
                   <div data-hero-reveal className="mt-4 flex flex-wrap gap-x-4 gap-y-2 text-[11px] font-semibold text-white/70 lg:justify-end">

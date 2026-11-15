@@ -2,7 +2,8 @@
 
 import { useMemo, useState } from "react";
 import Image from "next/image";
-import { ArrowRight, Check, MessageCircle, Search, X } from "lucide-react";
+import { ArrowRight, Check, Search, X } from "lucide-react";
+import { WhatsAppIcon } from "@/components/ui/WhatsAppIcon";
 import { catalogueDepartments, catalogueSeriesCount } from "@/data/catalogue";
 import { siteConfig } from "@/data/site-config";
 
@@ -69,7 +70,7 @@ export default function CataloguePage() {
                     </div>
                   </details>
 
-                  <a href={whatsappLink(department.title)} target="_blank" rel="noreferrer" className="mt-4 flex min-h-11 items-center justify-center gap-2 rounded-xl bg-[#25D366] px-4 text-xs font-black text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-[#20bd5a]"><MessageCircle className="h-4 w-4" fill="currentColor" /> Check price &amp; availability</a>
+                  <a href={whatsappLink(department.title)} target="_blank" rel="noreferrer" className="mt-4 flex min-h-11 items-center justify-center gap-2 rounded-xl bg-[#25D366] px-4 text-xs font-black text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-[#20bd5a]"><WhatsAppIcon className="h-5 w-5" /> Check price &amp; availability</a>
                 </div>
               </article>
             ))}

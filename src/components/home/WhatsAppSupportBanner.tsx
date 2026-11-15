@@ -2,7 +2,8 @@
 
 import React from "react";
 import { siteConfig } from "@/data/site-config";
-import { MessageCircle, PhoneCall, Sparkles, CheckCircle2 } from "lucide-react";
+import { PhoneCall, Sparkles, CheckCircle2 } from "lucide-react";
+import { WhatsAppIcon } from "@/components/ui/WhatsAppIcon";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 
 export function WhatsAppSupportBanner() {
@@ -57,7 +58,7 @@ export function WhatsAppSupportBanner() {
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto px-8 py-4 rounded-2xl bg-emerald-500 hover:bg-emerald-400 text-white font-bold text-sm sm:text-base flex items-center justify-center gap-3 shadow-xl shadow-emerald-500/30 hover:scale-105 active:scale-95 transition-all duration-300"
               >
-                <MessageCircle className="w-5 h-5 fill-white/20" />
+                <WhatsAppIcon className="h-5 w-5" />
                 <span>Chat on WhatsApp: {siteConfig.displayPhone}</span>
               </a>
               <span className="text-[11px] text-slate-400">

@@ -3,7 +3,8 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Check, Heart, MessageCircle, ShoppingCart, Star } from "lucide-react";
+import { Check, Heart, ShoppingCart, Star } from "lucide-react";
+import { WhatsAppIcon } from "@/components/ui/WhatsAppIcon";
 import { Product } from "@/types";
 import { formatPrice } from "@/lib/utils";
 import { generateProductWhatsAppUrl } from "@/lib/whatsapp";
@@ -39,7 +40,7 @@ export function ProductCard({ product, className = "" }: { product: Product; the
         </div>
         <div className="mt-auto grid grid-cols-[1fr_42px] gap-2 pt-4">
           <button onClick={add} className={`flex h-10 items-center justify-center gap-2 rounded-md text-xs font-extrabold text-white transition ${added ? "bg-emerald-600" : "bg-blue-700 hover:bg-blue-800"}`}>{added ? <><Check className="h-4 w-4" /> Added</> : <><ShoppingCart className="h-4 w-4" /> Add to cart</>}</button>
-          <a href={generateProductWhatsAppUrl(product, product.variants[0], 1)} target="_blank" rel="noreferrer" aria-label="Order on WhatsApp" className="grid h-10 place-items-center rounded-md bg-emerald-600 text-white transition hover:bg-emerald-700"><MessageCircle className="h-4 w-4" /></a>
+          <a href={generateProductWhatsAppUrl(product, product.variants[0], 1)} target="_blank" rel="noreferrer" aria-label="Order on WhatsApp" className="grid h-10 place-items-center rounded-md bg-[#25D366] text-white transition hover:bg-[#20bd5a]"><WhatsAppIcon className="h-5 w-5" /></a>
         </div>
       </div>
     </article>
