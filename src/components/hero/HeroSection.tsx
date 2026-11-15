@@ -146,7 +146,7 @@ export function HeroSection() {
             <article
               key={slide.id}
               aria-hidden={active !== index}
-              className="hero-slide relative min-h-[580px] w-full shrink-0 overflow-hidden sm:min-h-[610px] lg:min-h-[520px]"
+              className="hero-slide relative min-h-[580px] w-full shrink-0 overflow-hidden sm:min-h-[610px] lg:min-h-[clamp(580px,48vw,760px)]"
             >
               <div data-product-stage className="absolute inset-0">
                 <Image
@@ -171,7 +171,7 @@ export function HeroSection() {
               <div className="pointer-events-none absolute inset-0 opacity-30 [background:radial-gradient(circle_at_50%_48%,transparent_0%,transparent_25%,#12001f_86%)]" />
               <div className="hero-shine pointer-events-none absolute inset-y-0 -left-1/3 w-1/3 skew-x-[-18deg] bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
-              <div className="relative mx-auto grid min-h-[580px] max-w-[1440px] grid-rows-[auto_1fr_auto] px-5 pb-20 pt-9 sm:min-h-[610px] sm:px-8 sm:pt-12 lg:min-h-[520px] lg:grid-cols-[minmax(250px,0.8fr)_minmax(380px,1.35fr)_minmax(270px,0.85fr)] lg:grid-rows-1 lg:items-center lg:gap-5 lg:px-14 lg:pb-16 lg:pt-12">
+              <div className="relative mx-auto grid min-h-[580px] max-w-[1440px] grid-rows-[auto_1fr_auto] px-5 pb-20 pt-9 sm:min-h-[610px] sm:px-8 sm:pt-12 lg:min-h-[clamp(580px,48vw,760px)] lg:grid-cols-[minmax(250px,0.8fr)_minmax(380px,1.35fr)_minmax(270px,0.85fr)] lg:grid-rows-1 lg:items-center lg:gap-5 lg:px-14 lg:pb-16 lg:pt-12">
                 <div className="z-10 max-w-[330px] self-start lg:self-center">
                   <div
                     data-hero-reveal
