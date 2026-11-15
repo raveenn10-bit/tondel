@@ -8,6 +8,7 @@ import { WhatsAppSupportBanner } from "@/components/home/WhatsAppSupportBanner";
 import { CampaignBanners, PaymentOptions } from "@/components/home/CampaignBanners";
 import { ScrollStory } from "@/components/home/ScrollStory";
 import { FullCataloguePreview } from "@/components/home/FullCataloguePreview";
+import { OfficialBrandsMarquee } from "@/components/home/OfficialBrandsMarquee";
 import { getFeaturedProducts, getNewArrivals, getProductsByCategory, getSpecialOffers } from "@/data/products";
 
 export default function HomePage() {
@@ -30,6 +31,18 @@ export default function HomePage() {
             alt="TONDEL selected mobile, laptop and gadget deals up to 38 percent off"
             fill
             className="object-cover object-center transition duration-500 group-hover:scale-[1.015]"
+            sizes="(max-width: 640px) calc(100vw - 32px), (max-width: 1440px) calc(100vw - 56px), 1384px"
+          />
+        </Link>
+      </section>
+      <OfficialBrandsMarquee />
+      <section aria-label="Shop promotional collections" className="bg-[#f5f7fb] px-4 py-4 sm:px-7 sm:py-6">
+        <Link href="/offers" className="group relative mx-auto block aspect-[3/1] w-full max-w-[1384px] overflow-hidden rounded-2xl shadow-[0_14px_38px_rgba(30,64,175,.12)] ring-1 ring-slate-900/10 sm:rounded-3xl">
+          <Image
+            src="/images/banners/tondel-promo-categories.webp"
+            alt="TONDEL mega discounts, products below 10,000 rupees, products below 50,000 rupees and new arrivals"
+            fill
+            className="object-cover object-center transition duration-500 group-hover:scale-[1.012]"
             sizes="(max-width: 640px) calc(100vw - 32px), (max-width: 1440px) calc(100vw - 56px), 1384px"
           />
         </Link>
