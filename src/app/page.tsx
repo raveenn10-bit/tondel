@@ -23,6 +23,17 @@ export default function HomePage() {
       <CategoryNav />
       <FullCataloguePreview />
       <ProductSection title="Featured deals" subtitle="Popular tech selected for value, performance and everyday use." viewAllLink="/shop" products={getFeaturedProducts()} />
+      <section aria-label="Selected device promotion" className="bg-[#f5f7fb] px-4 py-4 sm:px-7 sm:py-6">
+        <Link href="/offers" className="group relative mx-auto block aspect-[3/1] w-full max-w-[1384px] overflow-hidden rounded-2xl shadow-[0_14px_38px_rgba(70,16,113,.16)] ring-1 ring-violet-900/10 sm:rounded-3xl">
+          <Image
+            src="/images/banners/tondel-38-off-strip.webp"
+            alt="TONDEL selected mobile, laptop and gadget deals up to 38 percent off"
+            fill
+            className="object-cover object-center transition duration-500 group-hover:scale-[1.015]"
+            sizes="(max-width: 640px) calc(100vw - 32px), (max-width: 1440px) calc(100vw - 56px), 1384px"
+          />
+        </Link>
+      </section>
       <ScrollStory />
       <section className="bg-[#f5f7fb] px-4 py-3 sm:px-7">
         <div className="mx-auto grid max-w-[1384px] gap-4 md:grid-cols-2">
