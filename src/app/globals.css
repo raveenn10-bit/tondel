@@ -2,6 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
+.crimson-footer {
+  background: linear-gradient(115deg, #2c0f12 0%, #49151a 49%, #6b1e23 100%);
+}
+
+.crimson-footer-shine {
+  background: radial-gradient(ellipse 55% 70% at 0% 0%, rgba(255, 180, 180, .14), transparent 70%),
+    linear-gradient(105deg, transparent 28%, rgba(255, 220, 220, .065) 49%, transparent 70%);
+  background-size: 100% 100%, 220% 100%;
+  animation: crimson-shine 13s ease-in-out infinite alternate;
+}
+
+@keyframes crimson-shine {
+  from { background-position: 0 0, 100% 0; }
+  to { background-position: 0 0, -100% 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .crimson-footer-shine { animation: none; }
+}
+
 :root {
   --background: #f5f7fb;
   --foreground: #0f172a;
