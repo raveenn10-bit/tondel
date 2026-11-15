@@ -28,13 +28,8 @@
 }
 
 .brand-marquee-track {
-  animation: brand-marquee-scroll 42s linear infinite;
+  animation: brand-marquee-scroll 110s linear infinite;
   will-change: transform;
-}
-
-.brand-marquee-reverse {
-  animation-direction: reverse;
-  animation-duration: 46s;
 }
 
 .brand-marquee-track:hover {
