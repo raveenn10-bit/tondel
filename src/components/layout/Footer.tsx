@@ -37,17 +37,18 @@ export function Footer() {
         </div>
         <div className="mx-auto mt-10 max-w-[1384px] border-t border-white/10 pt-6">
           <h3 className="mb-4 text-xs font-black uppercase tracking-[.16em] text-rose-100/85">Payment &amp; ordering options</h3>
-          <div className="overflow-hidden rounded-2xl bg-white p-3 shadow-lg sm:p-5">
-            <div className="overflow-x-auto" role="region" aria-label="Card and digital payment methods" tabIndex={0}>
+          <div className="rounded-2xl border border-white/10 bg-transparent p-2 sm:p-3">
+            <div role="region" aria-label="Card and digital payment methods">
               <Image
                 src="/images/payment-methods-reference.png"
                 alt="LankaPay, Visa, Mastercard, American Express, Discover, Diners Club, Genie, FriMi, eZ Cash, mCash, and other digital wallet logos"
                 width={2318}
                 height={598}
-                className="h-auto min-w-[760px] w-full"
+                className="mx-auto h-auto w-full max-w-[1160px] object-contain"
+                sizes="(max-width: 640px) calc(100vw - 48px), 1160px"
               />
             </div>
-            <p className="mt-3 text-xs text-slate-600">Card and digital wallet availability is confirmed with TONDEL before payment. Order via WhatsApp, bank transfer, or cash on delivery where available.</p>
+            <p className="mt-3 px-1 text-[11px] leading-5 text-rose-100/70 sm:text-xs">Card and digital wallet availability is confirmed with TONDEL before payment. Order via WhatsApp, bank transfer, or cash on delivery where available.</p>
           </div>
           <div className="mt-6 flex flex-col gap-4 border-t border-white/10 pt-6 text-[11px] text-rose-100/65 sm:flex-row sm:items-center sm:justify-between"><p>© {new Date().getFullYear()} TONDEL. All rights reserved.</p><p>Smart Choices, Smarter Living · Galle, Sri Lanka</p></div>
         </div>

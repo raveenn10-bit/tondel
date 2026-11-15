@@ -10,16 +10,17 @@ export function ProductSection({ title, subtitle, viewAllLink, products, classNa
   const rail = useRef<HTMLDivElement>(null);
   const move = (by: number) => rail.current?.scrollBy({ left: by, behavior: "smooth" });
   useEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches || products.length < 3) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches || products.length < 2) return;
+    const canHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
     const timer = window.setInterval(() => {
       const node = rail.current;
-      if (!node || node.matches(":hover")) return;
+      if (!node || (canHover && node.matches(":hover")) || node.scrollWidth <= node.clientWidth + 2) return;
       const atEnd = node.scrollLeft + node.clientWidth >= node.scrollWidth - 20;
       const firstCard = node.firstElementChild as HTMLElement | null;
       const gap = Number.parseFloat(window.getComputedStyle(node).columnGap || "0");
       const step = (firstCard?.offsetWidth || 262) + gap;
       node.scrollTo({ left: atEnd ? 0 : node.scrollLeft + step, behavior: "smooth" });
-    }, 7000);
+    }, 5000);
     return () => window.clearInterval(timer);
   }, [products.length]);
   if (!products.length) return null;
