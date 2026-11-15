@@ -15,8 +15,11 @@ export function ProductSection({ title, subtitle, viewAllLink, products, classNa
       const node = rail.current;
       if (!node || node.matches(":hover")) return;
       const atEnd = node.scrollLeft + node.clientWidth >= node.scrollWidth - 20;
-      node.scrollTo({ left: atEnd ? 0 : node.scrollLeft + 262, behavior: "smooth" });
-    }, 4800);
+      const firstCard = node.firstElementChild as HTMLElement | null;
+      const gap = Number.parseFloat(window.getComputedStyle(node).columnGap || "0");
+      const step = (firstCard?.offsetWidth || 262) + gap;
+      node.scrollTo({ left: atEnd ? 0 : node.scrollLeft + step, behavior: "smooth" });
+    }, 7000);
     return () => window.clearInterval(timer);
   }, [products.length]);
   if (!products.length) return null;
@@ -27,7 +30,7 @@ export function ProductSection({ title, subtitle, viewAllLink, products, classNa
           <div><h2 className="text-xl font-black tracking-tight text-slate-950 sm:text-2xl">{title}</h2>{subtitle && <p className="mt-1 max-w-2xl text-xs text-slate-500 sm:text-sm">{subtitle}</p>}</div>
           <div className="flex shrink-0 items-center gap-2"><button onClick={() => move(-320)} className="hidden h-9 w-9 place-items-center rounded-full border border-slate-200 text-slate-600 hover:border-blue-600 hover:text-blue-700 sm:grid" aria-label="Previous"><ChevronLeft className="h-4 w-4" /></button><button onClick={() => move(320)} className="hidden h-9 w-9 place-items-center rounded-full border border-slate-200 text-slate-600 hover:border-blue-600 hover:text-blue-700 sm:grid" aria-label="Next"><ChevronRight className="h-4 w-4" /></button>{viewAllLink && <Link href={viewAllLink} className="ml-1 text-xs font-extrabold uppercase tracking-wide text-blue-700 hover:text-blue-900">View all</Link>}</div>
         </div>
-        <div ref={rail} className="flex snap-x gap-4 overflow-x-auto pb-2 scrollbar-none">
+        <div ref={rail} className="flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth pb-2 scrollbar-none">
           {products.map((product) => <div key={product.id} className="w-[76vw] max-w-[270px] shrink-0 snap-start sm:w-[245px]"><ProductCard product={product} /></div>)}
         </div>
       </div>
