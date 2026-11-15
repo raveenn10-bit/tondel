@@ -34,7 +34,22 @@ export function Footer() {
           </div>
           {columns.map((column) => <div key={column.title}><h3 className="mb-5 text-sm font-extrabold text-white">{column.title}</h3><ul className="space-y-3">{column.links.map(([label, href]) => <li key={label}><Link href={href} className="text-xs text-slate-400 transition hover:translate-x-1 hover:text-white inline-block">{label}</Link></li>)}</ul></div>)}
         </div>
-        <div className="mx-auto mt-10 max-w-[1384px] border-t border-white/10 pt-6"><p className="mb-3 text-[10px] font-black uppercase tracking-[.16em] text-slate-500">Available payment & ordering options</p><div className="flex flex-wrap gap-2">{["Cash on Delivery", "Bank Transfer", "WhatsApp Confirmation"].map((option) => <span key={option} className="rounded-md border border-white/10 bg-white/5 px-3 py-2 text-[10px] font-bold text-slate-300">{option}</span>)}</div><div className="mt-6 flex flex-col gap-4 border-t border-white/10 pt-6 text-[11px] text-slate-500 sm:flex-row sm:items-center sm:justify-between"><p>© {new Date().getFullYear()} TONDEL. All rights reserved.</p><p>Smart Choices, Smarter Living · Galle, Sri Lanka</p></div></div>
+        <div className="mx-auto mt-10 max-w-[1384px] border-t border-white/10 pt-6">
+          <h3 className="mb-4 text-xs font-black uppercase tracking-[.16em] text-slate-300">Payment &amp; ordering options</h3>
+          <div className="overflow-hidden rounded-2xl bg-white p-3 shadow-lg sm:p-5">
+            <div className="overflow-x-auto" role="region" aria-label="Card and digital payment methods" tabIndex={0}>
+              <Image
+                src="/images/payment-methods-reference.png"
+                alt="LankaPay, Visa, Mastercard, American Express, Discover, Diners Club, Genie, FriMi, eZ Cash, mCash, and other digital wallet logos"
+                width={2318}
+                height={598}
+                className="h-auto min-w-[760px] w-full"
+              />
+            </div>
+            <p className="mt-3 text-xs text-slate-600">Card and digital wallet availability is confirmed with TONDEL before payment. Order via WhatsApp, bank transfer, or cash on delivery where available.</p>
+          </div>
+          <div className="mt-6 flex flex-col gap-4 border-t border-white/10 pt-6 text-[11px] text-slate-500 sm:flex-row sm:items-center sm:justify-between"><p>© {new Date().getFullYear()} TONDEL. All rights reserved.</p><p>Smart Choices, Smarter Living · Galle, Sri Lanka</p></div>
+        </div>
       </div>
     </footer>
   );
